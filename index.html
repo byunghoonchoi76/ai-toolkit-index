@@ -1,0 +1,722 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 70개를 기능·사용법으로 정리한 참고 서고">
+<title>AI ?댄궥 ?몃뜳??/title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-2: #eef1f4;
+    --ink: #161a20;
+    --ink-2: #4a5563;
+    --ink-3: #7b8798;
+    --line: #e0e5ea;
+    --line-2: #cdd4dc;
+    --accent: #0e7c86;
+    --accent-soft: #d8eef0;
+    --star: #b8730a;
+    --star-soft: #f7ecd8;
+    --code-bg: #14181f;
+    --code-ink: #dfe6ee;
+    --code-accent: #6ee0c8;
+    --lock: #9a3b4a;
+    --lock-soft: #f4e0e3;
+    /* category hues */
+    --c-skills: #0e7c86;   --c-skills-bg: #dceff1;
+    --c-infra: #4457b3;    --c-infra-bg: #e2e5f6;
+    --c-dev: #2f7d3a;      --c-dev-bg: #dcefdf;
+    --c-write: #a5478a;    --c-write-bg: #f3e2ef;
+    --c-research: #b8730a; --c-research-bg: #f7ecd8;
+    --c-apps: #b8443a;     --c-apps-bg: #f6e0dd;
+    --c-learn: #2d7a8c;    --c-learn-bg: #ddeef1;
+    --c-notion: #55606e;   --c-notion-bg: #e7eaee;
+    --c-lock: #9a3b4a;     --c-lock-bg: #f4e0e3;
+    --c-viz: #7a4fb3;      --c-viz-bg: #eae2f6;
+    --c-read: #b0567a;     --c-read-bg: #f6e2ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1015;
+      --surface: #161b22;
+      --surface-2: #1e2530;
+      --ink: #e9eef4;
+      --ink-2: #a9b4c2;
+      --ink-3: #6f7c8d;
+      --line: #262e39;
+      --line-2: #333d4a;
+      --accent: #4fc7cf;
+      --accent-soft: #123a3e;
+      --star: #e0a94a;
+      --star-soft: #3a2f16;
+      --code-bg: #0a0d12;
+      --code-ink: #d6dee7;
+      --code-accent: #6ee0c8;
+      --lock: #e0808f;
+      --lock-soft: #3a2226;
+      --c-skills: #4fc7cf;   --c-skills-bg: #113438;
+      --c-infra: #8b97e6;    --c-infra-bg: #1c2145;
+      --c-dev: #6bc178;      --c-dev-bg: #16311b;
+      --c-write: #dd93c9;    --c-write-bg: #35203010;
+      --c-write-bg: #351f2f;
+      --c-research: #e0a94a; --c-research-bg: #352a13;
+      --c-apps: #e88b81;     --c-apps-bg: #37201d;
+      --c-learn: #63c2d4;    --c-learn-bg: #12313880;
+      --c-learn-bg: #123138;
+      --c-notion: #9aa6b4;   --c-notion-bg: #232a34;
+      --c-viz: #b79ae0;      --c-viz-bg: #241a3a;
+      --c-read: #e08fac;     --c-read-bg: #3a1f2a;
+      --c-lock: #e0808f;     --c-lock-bg: #37222680;
+      --c-lock-bg: #372226;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1015; --surface: #161b22; --surface-2: #1e2530;
+    --ink: #e9eef4; --ink-2: #a9b4c2; --ink-3: #6f7c8d;
+    --line: #262e39; --line-2: #333d4a;
+    --accent: #4fc7cf; --accent-soft: #123a3e;
+    --star: #e0a94a; --star-soft: #3a2f16;
+    --code-bg: #0a0d12; --code-ink: #d6dee7; --code-accent: #6ee0c8;
+    --lock: #e0808f; --lock-soft: #3a2226;
+    --c-skills: #4fc7cf; --c-skills-bg: #113438;
+    --c-infra: #8b97e6; --c-infra-bg: #1c2145;
+    --c-dev: #6bc178; --c-dev-bg: #16311b;
+    --c-write: #dd93c9; --c-write-bg: #351f2f;
+    --c-research: #e0a94a; --c-research-bg: #352a13;
+    --c-apps: #e88b81; --c-apps-bg: #37201d;
+    --c-learn: #63c2d4; --c-learn-bg: #123138;
+    --c-notion: #9aa6b4; --c-notion-bg: #232a34;
+    --c-lock: #e0808f; --c-lock-bg: #372226;
+    --c-viz: #b79ae0; --c-viz-bg: #241a3a;
+    --c-read: #e08fac; --c-read-bg: #3a1f2a;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans KR", "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* Header */
+  header.top {
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, var(--surface), var(--bg));
+    padding: 44px 0 26px;
+  }
+  .top-inner { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 600; font-size: clamp(30px, 5vw, 46px);
+    line-height: 1.08; margin: 0; letter-spacing: -.01em;
+    text-wrap: balance; color: var(--ink);
+  }
+  .lede { color: var(--ink-2); max-width: 62ch; margin: 14px 0 0; font-size: 16px; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px;
+    font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-3);
+  }
+  .meta-row b { color: var(--ink-2); font-weight: 500; }
+
+  /* Controls */
+  .controls {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 0;
+    margin-bottom: 30px;
+  }
+  .controls-inner { max-width: 1120px; margin: 0 auto; padding: 0 20px;
+    display: flex; flex-direction: column; gap: 12px; }
+  .search {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--surface); border: 1px solid var(--line-2);
+    border-radius: 10px; padding: 9px 14px;
+  }
+  .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .search svg { width: 16px; height: 16px; color: var(--ink-3); flex: none; }
+  .search input {
+    border: 0; background: transparent; color: var(--ink);
+    font: inherit; font-size: 15px; width: 100%; outline: none;
+  }
+  .search input::placeholder { color: var(--ink-3); }
+  .pills { display: flex; flex-wrap: wrap; gap: 7px; }
+  .pill {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px;
+    border: 1px solid var(--line-2); background: var(--surface);
+    color: var(--ink-2); border-radius: 20px; padding: 5px 12px;
+    cursor: pointer; transition: .12s; white-space: nowrap;
+  }
+  .pill:hover { border-color: var(--ink-3); }
+  .pill[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .pill .n { opacity: .6; margin-left: 5px; }
+
+  /* Section */
+  section.cat { margin-top: 8px; scroll-margin-top: 130px; }
+  .cat-head { display: flex; align-items: baseline; gap: 12px; margin: 34px 0 4px; padding-bottom: 10px; border-bottom: 2px solid var(--cc, var(--line)); }
+  .cat-head .dot { width: 11px; height: 11px; border-radius: 3px; background: var(--cc); flex: none; align-self: center; }
+  .cat-head h2 { font-family: "IBM Plex Serif", serif; font-size: 21px; font-weight: 600; margin: 0; color: var(--ink); }
+  .cat-head .count { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-3); }
+  .cat-desc { color: var(--ink-2); font-size: 14px; margin: 12px 0 20px; max-width: 70ch; }
+
+  /* Grid + cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; padding: 18px 18px 16px;
+    display: flex; flex-direction: column; gap: 11px;
+    border-top: 3px solid var(--cc);
+  }
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+  .card h3 { font-size: 16.5px; font-weight: 700; margin: 0; letter-spacing: -.01em; color: var(--ink); }
+  .card .tagline { color: var(--ink-2); font-size: 13px; margin: 3px 0 0; }
+  .star {
+    flex: none; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; font-weight: 500;
+    color: var(--star); background: var(--star-soft); border-radius: 20px;
+    padding: 3px 8px; letter-spacing: .02em; white-space: nowrap;
+  }
+  .what { font-size: 13.5px; color: var(--ink-2); margin: 0; }
+  .feat { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  .feat li { font-size: 12.8px; color: var(--ink-2); padding-left: 15px; position: relative; }
+  .feat li::before { content: "??; position: absolute; left: 0; color: var(--cc); font-weight: 700; }
+  .use-label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 2px 0 0; }
+  .use {
+    background: var(--code-bg); color: var(--code-ink);
+    font-family: "IBM Plex Mono", monospace; font-size: 12px; line-height: 1.65;
+    border-radius: 8px; padding: 10px 12px; overflow-x: auto; margin: 0;
+    white-space: pre; -webkit-overflow-scrolling: touch;
+  }
+  .use .c { color: var(--code-accent); }
+  .use .step { color: var(--code-ink); white-space: pre-wrap; display: block; }
+  .card-foot { margin-top: auto; padding-top: 4px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .card-foot a { color: var(--accent); text-decoration: none; font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card-foot a:hover { text-decoration: underline; }
+  .card-foot a:focus-visible, .pill:focus-visible, .search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .kind { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--ink-3); border: 1px solid var(--line-2); border-radius: 5px; padding: 2px 7px; white-space: nowrap; flex: none; }
+
+  .locked-note { background: var(--c-lock-bg); border: 1px solid var(--line); border-left: 3px solid var(--lock); border-radius: 10px; padding: 14px 16px; font-size: 13px; color: var(--ink-2); }
+  .locked-note b { color: var(--lock); }
+  .locked-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 10px; margin-top: 14px; }
+  .locked-item { background: var(--surface); border: 1px solid var(--line); border-radius: 9px; padding: 12px 14px; font-size: 13px; }
+  .locked-item .li-t { font-weight: 600; color: var(--ink); }
+  .locked-item .li-u { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--ink-3); word-break: break-all; margin-top: 3px; }
+
+  .empty { display: none; text-align: center; color: var(--ink-3); padding: 60px 0; font-family: "IBM Plex Mono", monospace; }
+  footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 12.5px; font-family: "IBM Plex Mono", monospace; }
+  @media (max-width: 560px) { .grid, .locked-list { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="top-inner">
+    <p class="eyebrow">Reference Index</p>
+    <h1>紐⑥븘??AI ?꾧뎄쨌?먮즺 ?쒓퀬</h1>
+    <p class="lede">洹몃룞???섏쭛??源껎뿀釉뙿룹궗?댄듃쨌?몄뀡 留곹겕瑜??꾨? ?뺤씤???쒕Т?뉗쓣 ?섎뒗吏 / ?대뼸寃??곕뒗吏?앸줈 ?뺣━?섍퀬 10媛?移댄뀒怨좊━濡?遺꾨쪟?덉뒿?덈떎. 寃?됱갹怨??곷떒 ?꾪꽣濡??먰븯???꾧뎄瑜?諛붾줈 李얠쓣 ???덉뼱??</p>
+    <div class="meta-row">
+      <span><b>?뺤씤쨌?뺣━ ?꾨즺</b> 70媛?(GitHub쨌?뮤룸끂??</span>
+      <span><b>狩?愿?ъ궗 ?곌?</b> ?쇰Ц쨌諛쒗몴쨌?먮룞?붋룹??앷?由?/span>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="q" type="search" placeholder="?꾧뎄 ?대쫫쨌湲곕뒫?쇰줈 寃??(?? ?쇰Ц, hwp, 硫붾え由? ?꾨＼?꾪듃)" autocomplete="off">
+    </label>
+    <div class="pills" id="pills"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <main id="cats"></main>
+  <div class="empty" id="empty">寃??寃곌낵媛 ?놁뒿?덈떎.</div>
+
+  <footer>?뺤씤 諛⑸쾿: GitHub쨌?뱀? ?섏씠吏 ?먮Ц ?뚯떛, 怨듦컻 ?몄뀡? 釉뚮씪?곗? ?뚮뜑留곸쑝濡??쎌쓬. ?ㅼ튂 紐낅졊? 媛???μ냼 README 湲곗??대ŉ 踰꾩쟾? 諛붾????덉뒿?덈떎.</footer>
+</div>
+
+<script>
+const CATS = [
+  ["skills","?ㅽ궗 쨌 媛쒕컻 諛⑸쾿濡?,"Claude Code쨌Codex ???먯씠?꾪듃???ㅼ튂??肄붾뵫 ?뚰겕?뚮줈쨌?덉쭏쨌?됰룞???ㅼ옟???ㅽ궗/?뚮윭洹몄씤 臾띠쓬."],
+  ["infra","而⑦뀓?ㅽ듃 쨌 硫붾え由?쨌 ?쇱슦???명봽??,"?щ윭 LLM??臾띔퀬, ?몄뀡 湲곗뼲???좎??섍퀬, ?좏겙??以꾩씠怨? ?몃? ?쒕퉬?ㅼ뿉 ?곌껐?섎뒗 ?먯씠?꾪듃 ?섎? 援ъ“."],
+  ["dev","肄붾뱶 쨌 臾몄꽌 ?댄빐/?앹꽦 ?꾧뎄","肄붾뱶踰좎씠?ㅻ? ?댄빐쨌臾몄꽌?뷀븯嫄곕굹 DB쨌PDF 媛숈? 臾몄꽌瑜??ㅻ（??媛쒕컻 ?ㅻТ ?꾧뎄."],
+  ["write","?꾨＼?꾪듃 쨌 湲?곌린 (?쒓? ?뱁솕)","?꾨＼?꾪듃瑜??뺢탳?섍쾶 留뚮뱾嫄곕굹, AI ?곕? 吏?곌굅?? ?쒓? HWP 臾몄꽌瑜??ㅻ（???묐Ц ?꾧뎄."],
+  ["research","?곌뎄 쨌 ?쇰Ц ?꾧뎄","?곌뎄 ?뚰겕踰ㅼ튂, ?쇰Ц 洹몃┝ ?앹꽦, ?곗씠?곗뀑쨌踰ㅼ튂留덊겕, ?쇰Ц 援ы쁽 ?덉젣 ???숈닠 ?묒뾽??"],
+  ["apps","誘몃뵒??쨌 ?섎뱶?⑥뼱 ??,"?뚯븙 梨꾨낫, ?곸긽 ?ㅼ슫濡쒕뱶, ?섎뱶?⑥뼱 ?ㅺ퀎 ???낅┰ ?ㅽ뻾???좏뵆由ъ??댁뀡쨌?쒕퉬??"],
+  ["learn","?숈뒿 쨌 ?ㅼ뒿 (?몄쫰???뚰겕??","?곕씪 ?섎ŉ 諛곗슦???뚰겕?띉룻빖利덉삩 ??μ냼? 媛뺤쓽???먮즺."],
+  ["viz","AI ?숈뒿 쨌 ?쒓컖??쨌 ?ㅽ뿕","釉뚮씪?곗??먯꽌 吏곸젒 留뚯졇蹂대ŉ 諛곗슦??AI ?쒓컖?붋룹떎?샕룰컯醫????ㅼ튂 ?놁씠 媛쒕뀗???덉쑝濡??듯엳??援먯쑁 ?먮즺(?쇰???醫낅즺쨌?꾪솚??."],
+  ["read","媛?대뱶 쨌 ?꾪떚??(釉붾줈洹?","?대줈?쑣텮I ?쒖슜踰뺤쓣 ?뺣━???쒓? 釉붾줈洹?湲 ???꾧뎄 ?뚭컻? ?ㅼ튂쨌?명똿 ???꾩＜???쎌쓣嫄곕━."],
+  ["notion","?몄뀡 ?먮즺 쨌 ?꾨＼?꾪듃","怨듦컻 ?몄뀡 ?섏씠吏?먯꽌 ?뺤씤???꾨＼?꾪듃쨌?명똿 媛?대뱶 紐⑥쓬 ???遺遺?蹂듭궗??諛붾줈 ?????덈뒗 ?ㅼ쟾 ?먮즺(二쇰줈 ?섏뿉?대????대줈???쒖슜 ?곗옉)."],
+];
+const CATNAME = Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
+
+// helper: mono command line
+const T = [
+  // skills
+  {n:"superpowers", cat:"skills", star:"", tag:"肄붾뵫 ?먯씠?꾪듃???듯빀 媛쒕컻 諛⑸쾿濡?,
+   what:"怨㏓컮濡?肄붾뱶瑜?吏쒖? ?딄퀬 ?ㅺ퀎?믨퀎?띯넂媛쒕컻?믩━酉??쒖꽌濡??쇳븯寃?留뚮뱶???⑹꽦??composable) ?ㅽ궗 臾띠쓬. TDD? 洹쇨굅 湲곕컲 寃利앹쓣 媛뺤“.",
+   feat:["?ㅺ퀎쨌怨꾪쉷쨌TDD쨌由щ럭瑜??섎굹???뚰겕?뚮줈濡?,"?쒕툕?먯씠?꾪듃 ?숈떆 ?ㅽ뻾","Claude Code쨌Cursor쨌Devin쨌Copilot 吏??],
+   use:[["cmd","/plugin install superpowers@claude-plugins-official"]],
+   url:"https://github.com/obra/superpowers", kind:"plugin"},
+  {n:"mattpocock/skills", cat:"skills", star:"", tag:"?ㅻТ ?붿??덉뼱???ㅽ궗 紐⑥쓬",
+   what:"AI ?묒뾽??4? ?ㅽ뙣(?뺣젹 遺議굿룹옣?⑺븿쨌?덉쭏쨌?꾪궎?띿쿂 遺뺢눼)瑜?寃⑤깷???ㅽ궗. CONTEXT.md濡??꾨줈?앺듃 怨듭슜?대? 愿由?",
+   feat:["/grill-me 濡?肄붾뵫 ???붽뎄?ы빆 吏덉쓽","/tdd쨌/diagnosing-bugs ?덉쭏 ?꾧뎄","/improve-codebase-architecture"],
+   use:[["cmd","npx skills@latest add mattpocock/skills"],["step","?ㅼ튂 ??由ы룷留덈떎 /setup-matt-pocock-skills 1??]],
+   url:"https://github.com/mattpocock/skills", kind:"plugin"},
+  {n:"andrej-karpathy-skills", cat:"skills", star:"", tag:"LLM ?곸뒿 ?ㅼ닔 援먯젙 洹쒖튃",
+   what:"Karpathy媛 吏?곹븳 硫뗫?濡?媛?빧룰낵???ㅺ퀎瑜?留됰뒗 ?됰룞 吏移? ?섍????뺤씤쨌?⑥닚?㉱룹턀???섏젙쨌紐⑺몴 寃利앪?4?먯튃?쇰줈 ?먯씠?꾪듃瑜??덉젣.",
+   feat:["Think Before Coding / Simplicity First","Surgical Changes(?꾩슂??遺遺꾨쭔 ?섏젙)","Cursor 猷곕룄 ?ы븿"],
+   use:[["cmd","/plugin marketplace add forrestchang/andrej-karpathy-skills"],["cmd","/plugin install andrej-karpathy-skills@karpathy-skills"]],
+   url:"https://github.com/multica-ai/andrej-karpathy-skills", kind:"plugin"},
+  {n:"agent-skills (addyosmani)", cat:"skills", star:"", tag:"?꾨줈?뺤뀡 ?쇱씠?꾩궗?댄겢 ?꾨젅?꾩썙??,
+   what:"?쒕땲???붿??덉뼱 ?뚰겕?뚮줈瑜?9媛??щ옒??紐낅졊쨌25媛??ㅽ궗濡??몄퐫?? 紐낆꽭?믩같?ш퉴吏 ?꾩껜 ?쇱씠?꾩궗?댄겢??而ㅻ쾭. 70+ ?먯씠?꾪듃 ?명솚.",
+   feat:["/spec /plan /build /test /review /ship","?꾨Ц媛 ?섎Ⅴ?뚮굹쨌李몄“ 泥댄겕由ъ뒪??,"MIT ?쇱씠?좎뒪"],
+   use:[["cmd","npx skills add addyosmani/agent-skills"]],
+   url:"https://github.com/addyosmani/agent-skills", kind:"plugin"},
+  {n:"ponytail", cat:"skills", star:"", tag:"?섍쾶?쇰Ⅸ ?쒕땲?닳숈떇 肄붾뱶 ?덉젣",
+   what:"遺덊븘?뷀븳 肄붾뱶瑜?吏볦? ?딄쾶 ?좊룄. ?섏턀怨좎쓽 肄붾뱶??????肄붾뱶????YAGNI?믨린議??쇱씠釉뚮윭由р넂理쒖냼 肄붾뱶 ?쒖쑝濡??섏궗寃곗젙.",
+   feat:["肄붾뱶 ~54%?벬룸퉬??20%??(?ㅼ륫)","/ponytail [lite|full|ultra]","/ponytail-review 쨌 -audit 쨌 -debt"],
+   use:[["cmd","/plugin marketplace add DietrichGebert/ponytail"],["cmd","/plugin install ponytail@ponytail"]],
+   url:"https://github.com/dietrichgebert/ponytail", kind:"plugin"},
+  {n:"i-have-adhd", cat:"skills", star:"", tag:"?붿젏留?留먰븯寃?留뚮뱶???ㅽ궗",
+   what:"AI媛 ?쒕줎쨌?ъ슂?승룹씤?щ? 嫄룹뼱?닿퀬 ?섎떎?뚯뿉 ???쇄숇???留먰븯?꾨줉 媛뺤젣?섎뒗 而ㅻ??덉??댁뀡 洹쒖튃 10媛? SKILL.md留?怨좎튂硫?而ㅼ뒪?곕쭏?댁쫰.",
+   feat:["泥?以꾩뿉 ?ㅼ쓬 ?됰룞, 紐⑸줉 理쒕? 5媛?,"fork ??SKILL.md ?몄쭛","MIT"],
+   use:[["step","CLI???쏧nstall the i-have-adhd skill from github.com/ayghri/i-have-adhd??]],
+   url:"https://github.com/ayghri/i-have-adhd", kind:"skill"},
+  {n:"Task Observer", cat:"skills", star:"", tag:"?ㅽ궗???먮룞 ?앹꽦쨌媛쒖꽑?섎뒗 硫뷀? ?ㅽ궗",
+   what:"?묒뾽 ?몄뀡??愿李고빐 諛섎났 ?⑦꽩쨌?ъ슜??援먯젙???ъ갑?섍퀬, ?ㅻⅨ 紐⑤뱺 ?ㅽ궗(?먭린 ?먯떊 ?ы븿)???먮룞?쇰줈 留뚮뱾怨?媛깆떊?섎뒗 ?쇰뱶諛?猷⑦봽.",
+   feat:["諛섎났 ?⑦꽩 ???ㅽ궗 ?꾨낫 ?쒖븞","湲곗〈 ?ㅽ궗 媛깆떊??+ 愿李?濡쒓렇","怨듯넻 ?먯튃 異붿텧쨌?먭린 媛쒖꽑"],
+   use:[["step","由대━??.skill 踰덈뱾 ?먮뒗 ?대줎 ??.claude/skills/task-observer/ ??諛곗튂"],["step","?몄뀡 以??쏛ny observations logged???濡??뺤씤"]],
+   url:"https://github.com/rebelytics/one-skill-to-rule-them-all", kind:"skill"},
+  {n:"claude-code-setup", cat:"skills", star:"", tag:"肄붾뱶踰좎씠??留욎땄 ?먮룞??異붿쿇 (怨듭떇)",
+   what:"肄붾뱶踰좎씠?ㅻ? ?ㅼ틪??洹??꾨줈?앺듃??留욌뒗 Claude Code ?먮룞??MCP쨌?ㅽ궗쨌?끒룹꽌釉뚯뿉?댁쟾?맞룹뒳?섏떆 紐낅졊)瑜?異붿쿇?섎뒗 Anthropic 怨듭떇쨌?쎄린 ?꾩슜 ?뚮윭洹몄씤.",
+   feat:["?뚯씪 ?섏젙 ?녿뒗 read-only 異붿쿇","?끒룹꽌釉뚯뿉?댁쟾?맞텺CP ?쒖븞","怨듭떇 Claude Plugins濡??ㅼ튂"],
+   use:[["step","?ㅼ튂 ???쐒ecommend automations for this project???붿껌"]],
+   url:"https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup", kind:"plugin"},
+
+  // infra
+  {n:"OmniRoute", cat:"infra", star:"", tag:"352+ AI ?꾨줈諛붿씠???⑥씪 寃뚯씠?몄썾??,
+   what:"Claude쨌GPT쨌Gemini ??352+ ?꾨줈諛붿씠?붾? ?섎굹??OpenAI ?명솚 ?붾뱶?ъ씤?몃줈 臾띕뒗 寃뚯씠?몄썾?? 臾대즺 ?곗뼱 150+ ?쒖슜, ?좏겙 15~95% ?덇컧.",
+   feat:["4?④퀎 ?먮룞 ?대갚 쨌 19醫??쇱슦???꾨왂","?먭꺽利앸챸 AES-256 ?뷀샇?붋텾II 留덉뒪??,"36+ ?꾧뎄 ?곕룞 쨌 ?댁옣 MCP"],
+   use:[["cmd","npm install -g omniroute"],["cmd","omniroute"],["step","?꾧뎄 base URL??http://localhost:20128/v1, 紐⑤뜽 auto"]],
+   url:"https://github.com/diegosouzapw/OmniRoute", kind:"infra"},
+  {n:"claude-mem", cat:"infra", star:"", tag:"Claude Code ?몄뀡 媛??곸냽 硫붾え由?,
+   what:"?몄뀡???앸굹???꾨줈?앺듃 吏?앹쓣 ?좎?. ?꾧뎄 ?ъ슜???먮룞 罹≪쿂???붿빟?섍퀬 ?ㅼ쓬 ?몄뀡???댁뼱諛쏆쓬. ?쇱씠?꾩궗?댄겢 ?낆쑝濡?臾닿컻???먮룞 ?숈옉.",
+   feat:["mem-search 濡??덉뒪?좊━ ?먯뿰??寃??,"??酉곗뼱 UI 쨌 <private> ?쒓렇","search쨌timeline MCP ??],
+   use:[["cmd","npx claude-mem install"],["cmd","/plugin marketplace add thedotmack/claude-mem"]],
+   url:"https://github.com/thedotmack/claude-mem", kind:"plugin"},
+  {n:"Headroom", cat:"infra", star:"", tag:"LLM ?꾩넚 ??濡쒖뺄 ?좏겙 ?뺤텞",
+   what:"?꾧뎄 異쒕젰쨌濡쒓렇쨌RAG 泥?겕瑜?LLM??蹂대궡湲???濡쒖뺄?먯꽌 ?뺤텞(肄붾뵫 ~20%, JSON 60~95%??. ?곗씠?곌? 濡쒖뺄??癒몃Ъ怨??먮낯 蹂듭썝 媛??",
+   feat:["?쇱씠釉뚮윭由?룻봽濡앹떆쨌MCP쨌?섑띁 紐⑤뱶","JSON/肄붾뱶/?곕Ц 肄섑뀗痢??몄떇 ?뺤텞","?щ줈???먯씠?꾪듃 硫붾え由?],
+   use:[["cmd",'uv tool install --python 3.13 "headroom-ai[all]"'],["cmd","headroom wrap claude"]],
+   url:"https://github.com/headroomlabs-ai/headroom", kind:"infra"},
+  {n:"Open Connector", cat:"infra", star:"", tag:"?먯씠?꾪듃 ??1,000+ SaaS ?몄쬆 寃뚯씠?몄썾??,
+   what:"AI ?먯씠?꾪듃瑜?1,000+ SaaS???곌껐?섎뒗 ?ㅽ뵂?뚯뒪 ?몄쬆 寃뚯씠?몄썾??Pipedream쨌Composio ???. OAuth쨌?먭꺽利앸챸?????泥섎━.",
+   feat:["GitHub쨌Gmail쨌Notion쨌Slack ?ъ쟾 ?≪뀡","SDK쨌CLI쨌MCP쨌HTTP쨌OpenAPI","Docker쨌K8s쨌self-host"],
+   use:[["cmd","docker compose up"],["step","肄섏넄 http://localhost:3000"]],
+   url:"https://github.com/oomol-lab/open-connector", kind:"infra"},
+  {n:"Agent-Reach", cat:"infra", star:"", tag:"?먯씠?꾪듃???섏씤?곕꽬 ?꾩껜 ?묎렐??遺??,
+   what:"?먯씠?꾪듃媛 ?뮤룹냼?쑣룹쁺?겶룻뵾?쒖뿉 ?묎렐?섎룄濡?寃利앸맂 ?ㅽ뵂?뚯뒪 ?꾧뎄(yt-dlp쨌Jina쨌Exa ????留ㅽ븨???ㅼ젙??????댁＜???ㅼ틦?대뵫.",
+   feat:["??蹂몃Ц(Jina)쨌?쒕㎤??寃??Exa)","Twitter쨌Reddit쨌LinkedIn쨌GitHub","YouTube쨌Bilibili ?먮쭑, RSS"],
+   use:[["cmd","pip install https://github.com/Panniantong/agent-reach/archive/main.zip"],["cmd","agent-reach install --env=auto"]],
+   url:"https://github.com/Panniantong/Agent-Reach/blob/main/docs/README_ko.md", kind:"infra"},
+  {n:"LangGraph", cat:"infra", star:"", tag:"?곹깭 ?좎????먯씠?꾪듃 ?ㅼ??ㅽ듃?덉씠??,
+   what:"LangChain????섏? ?ㅼ??ㅽ듃?덉씠???꾨젅?꾩썙?? ?κ린 ?ㅽ뻾쨌?곹깭 ?좎? ?먯씠?꾪듃瑜?援ъ텞쨌諛고룷. Klarna쨌Replit ?깆씠 ?ъ슜.",
+   feat:["Durable Execution(以묐떒 吏???ш컻)","Human-in-the-Loop","?④린+?κ린 硫붾え由? LangSmith ?곕룞"],
+   use:[["cmd","pip install -U langgraph"]],
+   url:"https://github.com/langchain-ai/langgraph", kind:"framework"},
+
+  // dev
+  {n:"RepoBrain", cat:"dev", star:"", tag:"肄붾뱶踰좎씠?ㅼ슜 ?쁂hatGPT??(洹쇨굅 ?몄슜)",
+   what:"硫?곗뿉?댁쟾?멸? 肄붾뱶踰좎씠?ㅻ? ?ㅼ뒪濡??숈뒿??吏??臾몄꽌瑜?留뚮뱾怨? ?뚯씪 寃쎈줈쨌?쇱씤 洹쇨굅瑜?遺숈뿬 吏덈Ц???듯븿. ?щ윭 IDE 吏??",
+   feat:["import쨌?붾젆?곕━ 湲곕컲 紐⑤뱢 ?먮룞 ?먯?","濡쒓렇??CLI ?ъ슜(API ??遺덊븘??","蹂寃쎈텇留?媛깆떊?섎뒗 利앸텇 ?낅뜲?댄듃"],
+   use:[["cmd","/plugin marketplace add study8677/repobrain"],["step","rb-setup ??rb-refresh ??rb-ask"]],
+   url:"https://github.com/study8677/repobrain", kind:"tool"},
+  {n:"OpenWiki", cat:"dev", star:"", tag:"肄붾뱶踰좎씠???꾪궎 ?먮룞 ?앹꽦쨌?좎?",
+   what:"LangChain Deep Agents 湲곕컲 CLI. 肄붾뱶瑜?遺꾩꽍??留곹겕??Markdown ?꾪궎瑜?留뚮뱾怨???μ냼 蹂寃쎌뿉 留욎떠 媛깆떊. 媛쒖씤 吏??釉뚮젅?? 紐⑤뱶??",
+   feat:["?ъ떎 二쇱옣??踰꾩쟾蹂??뚯뒪 洹쇨굅 ?곌껐","13媛?紐⑤뜽 ?쒓났???媛?而ㅻ꽖??,"?몃뱶 洹몃옒???쒓컖??쨌 CI ?먮룞 媛깆떊"],
+   use:[["cmd","npm install -g openwiki"],["cmd","openwiki --init"],["cmd","openwiki --update"]],
+   url:"https://github.com/langchain-ai/openwiki", kind:"tool"},
+  {n:"drawDB", cat:"dev", star:"", tag:"臾댁꽕移?釉뚮씪?곗? ERD쨌DB ?ㅺ퀎湲?,
+   what:"媛???놁씠 釉뚮씪?곗??먯꽌 諛붾줈 ?곕뒗 臾대즺 DB ?ㅽ궎留??ㅺ퀎 ?꾧뎄. ERD瑜?洹몃젮 SQL濡??대낫?닿굅??SQL??遺덈윭? ?ㅼ씠?닿렇?⑦솕.",
+   feat:["SQL import/export 쨌 留덉씠洹몃젅?댁뀡","PostgreSQL쨌MySQL쨌Oracle쨌SQLite ??,"濡쒖뺄(IndexedDB) ???],
+   use:[["step","?뱀뿉??諛붾줈 ?ъ슜 (drawdb.app)"],["cmd","git clone ??&& npm install && npm run dev"]],
+   url:"https://github.com/drawdb-io/drawdb", kind:"webapp"},
+  {n:"PDF Inspector", cat:"dev", star:"狩??쇰Ц/臾몄꽌", tag:"OCR ?놁씠 鍮좊Ⅸ PDF?묺arkdown (Firecrawl)",
+   what:"PDF媛 ?띿뒪?몄씤吏 ?ㅼ틪蹂몄씤吏 ?먮룞 ?먮퀎?섍퀬 ?꾩튂瑜??대젮 ?띿뒪?몃? 戮묒븘 Markdown?쇰줈 蹂?섑븯??Rust ?쇱씠釉뚮윭由? ?띿뒪??PDF??200ms ?대궡.",
+   feat:["?좏삎 遺꾨쪟 10~50ms쨌?좊ː???먯닔","?ㅻ떒 ?덉씠?꾩썐쨌?쑣룹퐫?쒕툝濡?蹂댁〈","Python쨌Node쨌WASM쨌CLI 諛붿씤??],
+   use:[["cmd","pip install pdf-inspector"],["step",'pdf_inspector.process_pdf("doc.pdf")']],
+   url:"https://github.com/firecrawl/pdf-inspector", kind:"library"},
+
+  // write
+  {n:"prompt-master", cat:"write", star:"", tag:"?대뼡 AI???뺣? ?꾨＼?꾪듃 ?앹꽦",
+   what:"ChatGPT쨌Midjourney쨌肄붾뵫 ?먯씠?꾪듃???뺣?쨌?좏겙 ?⑥쑉 ?꾨＼?꾪듃瑜?留뚮뱶??Claude ?ㅽ궗. ?ν솴?⑥쓣 ?놁븷怨??섎え???⑥뼱媛 ?섎?瑜?媛뽮쾶??",
+   feat:["30+ ?꾧뎄 ?꾨줈?뚯씪 쨌 13醫??쒗뵆由?,"37媛???퉬 ?⑦꽩 ?먯?쨌?좏겙 媛먯궗","?몄뀡 媛?寃곗젙 蹂댁〈 硫붾え由?],
+   use:[["cmd","git clone ??prompt-master ~/.claude/skills/prompt-master"],["step","?먮뒗 claude.ai ??Customize ??Skills ?낅줈??]],
+   url:"https://github.com/nidhinjs/prompt-master", kind:"skill"},
+  {n:"im-not-ai", cat:"write", star:"狩?蹂댁쑀 ?ㅽ궗", tag:"?쒓? AI ???쒓굅 (?대㉧?섏씠?)",
+   what:"AI媛 ???쒓????щ엺 湲泥섎읆 ?ㅻЦ. 踰덉뿭??룰린怨꾩쟻 蹂묐젹쨌?곸뼱 ?몄슜 ??71媛?AI ???⑦꽩???먯?쨌?ъ옉?깊븯???섎????좎?. (蹂댁쑀??humanize-korean 怨꾩뿴)",
+   feat:["10媛??遺꾨쪟쨌70?⑦꽩쨌?ш컖??S1~S3","Light/Standard/Heavy 3寃쎈줈","?섎? 蹂댁〈쨌怨쇱쑄臾?諛⑹? ?덉쟾?μ튂"],
+   use:[["cmd","/plugin marketplace add epoko77-ai/im-not-ai"],["cmd","/plugin install humanize-korean@im-not-ai"]],
+   url:"https://github.com/epoko77-ai/im-not-ai", kind:"plugin"},
+  {n:"claw-hwp", cat:"write", star:"狩??숈쐞?쇰Ц HWP", tag:"AI濡??쒓? HWP/HWPX ?쎄린쨌?앹꽦쨌?몄쭛",
+   what:"?쒖뺨 ?ㅽ뵾?ㅻ굹 蹂???놁씠 Claude쨌Codex媛 HWP/HWPX瑜?吏곸젒 ?쎄퀬 留뚮뱾怨??몄쭛. ?먯뿰?대줈 ?몄쭛 吏?? (?몃씪???대?吏 ?ш린 源⑥쭚 ?댁뒋???뚮젮???덉쓬)",
+   feat:["蹂몃Ц쨌?쑣룸찓??곗씠??異붿텧","?쒖떇쨌?쑣룹씠誘몄?쨌李⑦듃쨌?섏떇쨌?꾩옣","?섏씠吏 ?ㅼ젙쨌?뚮쭏쨌?묒떇 梨꾩슦湲?],
+   use:[["cmd","claude plugin marketplace add https://github.com/DoHyun468/claw-hwp"],["cmd","claude plugin install claw-hwp@claw-hwp"]],
+   url:"https://github.com/DoHyun468/claw-hwp", kind:"plugin"},
+
+  // research
+  {n:"open-science", cat:"research", star:"狩??곌뎄", tag:"濡쒖뺄 ?곗꽑 AI ?곌뎄 ?뚰겕踰ㅼ튂",
+   what:"?먯뿰?대줈 ?곌뎄 紐⑺몴瑜??곕㈃ ?먯씠?꾪듃媛 ?뚯씪???쎄퀬 肄붾뱶瑜??ㅽ뻾?섍퀬 怨쇳븰 DB瑜?議고쉶??異붿쟻 媛?ν븳 寃곌낵臾쇱쓣 ?대뒗 ?곗뒪?ы넲 ?? 紐⑤뜽 鍮꾩쥌??",
+   feat:["Python/R ?ㅽ뻾쨌24媛??곌뎄 而ㅻ꽖??,"寃곌낵臾?異쒖쿂 異붿쟻(provenance)","22媛?怨쇳븰 ?ㅽ궗쨌?ㅼ쨷 紐⑤뜽"],
+   use:[["cmd","brew install --cask open-science"],["step","?먮뒗 由대━?ㅼ뿉??OS蹂??몄뒪?⑤윭"]],
+   url:"https://github.com/aipoch/open-science", kind:"desktop"},
+  {n:"PaperBanana", cat:"research", star:"狩??쇰Ц 洹몃┝", tag:"?쇰Ц湲??ㅼ씠?닿렇?㉱룻넻怨??뚮’ ?먮룞 ?앹꽦",
+   what:"諛⑸쾿濡??띿뒪?맞룸뜲?댄꽣濡쒕???異쒗뙋 ?덉쭏???숈닠 ?ㅼ씠?닿렇?㉱룻뵆濡?쓣 留뚮뱶???먯씠?꾪듃 ?꾨젅?꾩썙?? ?쇰Ц 洹몃┝ ?쒖옉 ?쒓컙???⑥텞. (鍮꾧났??援ы쁽泥?",
+   feat:["7媛??먯씠?꾪듃 ?뚯씠?꾨씪?맞룸컲蹂??뺤젣","NeurIPS쨌ICML쨌ACL쨌IEEE ?ㅽ?????,"??UI쨌MCP쨌PDF ?낅젰"],
+   use:[["cmd","pip install paperbanana"],["cmd",'paperbanana generate --input method.txt --caption "??']],
+   url:"https://github.com/llmsresearch/paperbanana", kind:"tool"},
+  {n:"PixelNeRF (100以?援ы쁽)", cat:"research", star:"狩?CV/3D", tag:"?????대?吏濡?3D 蹂듭썝 (援먯쑁??",
+   what:"?쇰Ц pixelNeRF(?뚯닔 ?쒖젏 ?대?吏??D)???듭떖??~100以?Python?쇰줈 ?ы쁽??援먯쑁???덉젣. ShapeNet ?먮룞李??⑥씪 ?쒖젏 蹂듭썝 ?곕え.",
+   feat:["few-image NeRF 3D 蹂듭썝","?쒕뱶留덊겕 CV ?쇰Ц ?뺤텞 援ы쁽","pixelnerf.py ???뚯씪"],
+   use:[["step","README???쒕씪?대툕?먯꽌 ?곗씠?곗뀑 ??data/"],["cmd","pip3 install -r requirements.txt"],["cmd","python3 pixelnerf.py"]],
+   url:"https://github.com/MaximeVandegar/Papers-in-100-Lines-of-Code/tree/main/PixelNeRF_Neural_Radiance_Fields_from_One_or_Few_Images", kind:"example"},
+  {n:"StoryScope", cat:"research", star:"", tag:"?쒖궗 遺꾩꽍 쨌 AI/?멸컙 ????먮퀎",
+   what:"?뚯꽕???몃????쒖궗 ?뱀쭠??異붿텧??AI ?앹꽦 ?댁빞湲곗? ?멸컙 ??묒쓣 遺꾩꽍?섎뒗 ?곌뎄 ?뚯씠?꾨씪?? 61,000+ ?댁빞湲?遺꾩꽍, ?먮퀎 macro-F1 93.2%.",
+   feat:["10媛?李⑥썝쨌304媛??댁꽍 媛???뱀쭠","6?④퀎 ?뚰겕?뚮줈","OpenAI쨌Claude쨌Vertex쨌濡쒖뺄 HF"],
+   use:[["cmd","git clone ??&& pip install -r requirements.txt"],["step","config/models.yaml ?ㅼ젙 ??6?④퀎 ?ㅽ뻾"]],
+   url:"https://github.com/jenna-russell/storyscope", kind:"pipeline"},
+  {n:"SemComp-Bench", cat:"research", star:"", tag:"?곸긽 ?앹꽦 ?섍낵???꾩닔???됯? ?곗씠?곗뀑",
+   what:"?곸긽 ?앹꽦 紐⑤뜽??吏?쒕? ?댄빐?섍퀬 紐⑺몴 ?곹깭 ?곸긽??留뚮뱶?붿? ?됯??섍린 ?꾪븳 SemComp-Data 援ъ텞 ?뚯씠?꾨씪?? 9?④퀎 ?쒖감 泥섎━.",
+   feat:["?꾪꽣?믩텇瑜섃넂?쒓컙 洹몃씪?대뵫?믫겢由?異붿텧","?④퀎留덈떎 Parquet濡?異붿쟻","肄붾뱶 Apache 2.0(踰덈뱾? 鍮꾩긽???쒗븳)"],
+   use:[["cmd","conda create -n semcomp python=3.10 -y"],["step","1_titleFilter.py ??9_?쫜y 踰덊샇 ???ㅽ뻾"]],
+   url:"https://github.com/Kelly372/SemComp-Bench", kind:"benchmark"},
+  {n:"OmniDirector", cat:"research", star:"", tag:"李몄“ ?곸긽??移대찓??臾대튃???뺤?而룹뿉 ?댁떇",
+   what:"硫?곗꺑 李몄“ ?곸긽?먯꽌 移대찓???吏곸엫??異붿텧?? 吏앹??댁쭊 ?숈뒿 ?곗씠???놁씠 ?뺤? ?대?吏??臾대튃???낇? ?좊땲硫붿씠?섑솕?섎뒗 ?곌뎄. ?뚮━以뙿룸텋由욱??꾧퉴吏.",
+   feat:["??났쨌湲됯컯????怨좊궃??湲곕룞","?쁟amera grid??+ 怨꾩링???꾨＼?꾪듃 ?뺤옣","硫?곗꺑 ?λ㈃ ?쇨???],
+   use:[["step","?꾨줈?앺듃 ?섏씠吏(?곕え쨌?쇰Ц)"],["step","肄붾뱶: github.com/lisj575/OmniDirector"]],
+   url:"https://ymlinfeng.github.io/OmniDirector.github.io/", kind:"research"},
+  {n:"Exegete", cat:"research", star:"", tag:"?깃꼍 ?먯뼱 RAG (?섍컖 諛⑹?)",
+   what:"寃利앸맂 ?곗씠?곗뀑?먯꽌 ?ㅼ젣 ?깃꼍 蹂몃Ц쨌?먯뼱瑜?議고쉶??LLM 湲곗뼲 ?섍컖??留됰뒗 ?깃꼍 ?곌뎄 ?꾧뎄. 洹몃━?ㅼ뼱쨌?덈툕由ъ뼱 ?뚯떛쨌?ъ쟾쨌移좎떗?몄뿭쨌?쒓뎅??吏??",
+   feat:["4?④퀎 二쇳빐 ?꾨줈?몄뒪","STEPBible쨌Abbott-Smith쨌BDB 洹쇨굅","肄붾뱶 MIT (蹂몃Ц? ?쇰툝由??꾨찓??"],
+   use:[["cmd",'python src/lookup.py "John 3:16"'],["cmd","python setup_data.py  (?먯뼱 異붽?)"]],
+   url:"https://github.com/worlyung/exegete", kind:"tool"},
+
+  // apps
+  {n:"muscriptor", cat:"apps", star:"", tag:"?ㅻ뵒????MIDI쨌?낅낫 梨꾨낫 紐⑤뜽",
+   what:"?ㅻ뵒???뱀쓬??MIDI쨌?낅낫濡?蹂?섑븯???ㅽ뵂?뚯뒪 梨꾨낫 紐⑤뜽(Kyutai쨌Mirelo). ?ㅼ쨷 ?낃린, small/medium/large 3醫?",
+   feat:["MIDI쨌MusicXML쨌PDF ?낅낫 異쒕젰","GPU쨌Apple Silicon(MPS) ?먮룞 理쒖쟻??,"?щ줈?ㅽ뵆?ロ뤌"],
+   use:[["cmd","uvx muscriptor serve  (??UI)"],["cmd","uvx muscriptor transcribe audio.wav"]],
+   url:"https://github.com/muscriptor/muscriptor", kind:"model"},
+  {n:"Parabolic", cat:"apps", star:"", tag:"yt-dlp 湲곕컲 ?곸긽쨌?ㅻ뵒???ㅼ슫濡쒕뜑 GUI",
+   what:"yt-dlp??洹몃옒???꾨줎?몄뿏?? ?섎갚 媛??ъ씠?몄뿉???곸긽쨌?ㅻ뵒?ㅻ? ?대젮諛쏅뒗 ?곗뒪?ы넲 ??Linux쨌Windows쨌macOS).",
+   feat:["mp4쨌webm쨌mp3쨌flac쨌wav","?숈떆 ?ㅼ쨷 ?ㅼ슫濡쒕뱶","硫뷀??곗씠?걔룹옄留?],
+   use:[["step","Linux: Flathub / Win쨌mac: Releases"],["step","Firefox ?좊뱶???뺤옣 ?쒓났"]],
+   url:"https://github.com/NickvisionApps/Parabolic", kind:"desktop"},
+  {n:"Tinkered AI", cat:"apps", star:"", tag:"?먯뿰?대줈 ?꾩옄湲곌린 ?ㅺ퀎쨌?쒕?쨌諛고룷",
+   what:"留뚮뱾怨??띠? 寃껋쓣 ?됱긽?대줈 留먰븯硫??뚮줈瑜??ㅺ퀎?섍퀬 ?뚯썾?대? ?묒꽦쨌寃利앺븳 ??3D濡??쒕??덉씠?섑븯??AI ?섎뱶?⑥뼱 ?ㅺ퀎 ???뚮옯??",
+   feat:["Build ??Simulate ??Deploy","Arduino쨌ESP32쨌?쇱쫰踰좊━?뚯씠 ??1,300+ 蹂대뱶","?뚮줈?꽷룸??댟룹퐫?쑣?D ?숆린??],
+   use:[["step","媛?????꾩씠?붿뼱 ?쒖닠 ??Build/Simulate/Deploy"]],
+   url:"https://www.tinkered.ai/", kind:"webapp"},
+
+  // learn
+  {n:"cwc-workshops", cat:"learn", star:"", tag:"?쁂ode with Claude???먯씠?꾪듃 ?뚰겕??(怨듭떇)",
+   what:"Anthropic??CWC ?뚰겕???먮즺. Claude API쨌Managed Agents濡??먯씠?꾪듃瑜?留뚮뱶??踰좎뒪???꾨옓?곗뒪瑜?9媛??몄쫰?⑥쑝濡??쒖뿰.",
+   feat:["紐⑤뜽 ?좏깮쨌?먯씠?꾪듃 遺꾪빐쨌eval","硫붾え由??덈뒗 ?먯씠?꾪듃쨌?꾨줈?뺤뀡 ?먯씠?꾪듃","SEC ?뚯씪留?由ъ꽌移??곗뒪??],
+   use:[["cmd","git clone https://github.com/anthropics/cwc-workshops.git"],["step","媛??뚰겕???대뜑??setup 吏移?]],
+   url:"https://github.com/anthropics/cwc-workshops", kind:"course"},
+  {n:"a2ui_handson", cat:"learn", star:"", tag:"?띿뒪?????UI瑜?留뚮뱶???먯씠?꾪듃 ?ㅼ뒿",
+   what:"援ш? ADK + A2UI濡??먯씠?꾪듃媛 移대뱶쨌?쑣룸쾭??媛숈? 由ъ튂 UI瑜??앹꽦?섍쾶 留뚮뱶??援먯쑁 ??μ냼. Gemini媛 JSON??留뚮뱾硫???쒕낫?쒕줈 ?뚮뜑留?",
+   feat:["?띿뒪?멤넂UI 3?④퀎 而ㅻ━?섎읆","?명봽???곹깭 紐⑹뾽 ??쒕낫??,"Codespaces ?먮룞 ?섍꼍"],
+   use:[["cmd","git clone ??&& cp .env.example .env"],["cmd","./run.sh  ?? http://localhost:8080"]],
+   url:"https://github.com/dongmin0204/a2ui_handson", kind:"course"},
+  {n:"Vertex AI Pipelines ?몄쫰??, cat:"learn", star:"", tag:"GDG 쨌 Kubeflow ?뚯씠?꾨씪???ㅼ뒿 (?몄뀡)",
+   what:"?쁁uild with AI ??GDG Campus Korea???됱궗???몄쫰??媛?대뱶. Cloud Shell?먯꽌 Gemini CLI濡?Vertex AI Pipelines(愿由ы삎 Kubeflow)瑜??ㅻ８.",
+   feat:["泥??뚯씠?꾨씪??鍮뚮뱶쨌?곗씠??怨듭쑀","(怨좉툒) CI/CD쨌GPU ?ㅽ뻾","GitHub repo쨌?щ씪?대뱶 留곹겕 ?ы븿"],
+   use:[["step","?щ젅???깅줉 ??Cloud Shell ?묒냽 ??gemini濡?clone"],["step","?몄쫰??1~3 ?쒖꽌?濡?]],
+   url:"https://dojm0727.notion.site/Vertex-AI-Pipelines-Hands-on-35777c4250e880259623d6727e2ab870", kind:"notion"},
+
+  // notion (public, read OK)
+  {n:"?ㅻ꼫??쨌 AI 諛쒗몴?먮즺 ?쒖옉 ?꾨＼?꾪듃", cat:"notion", star:"狩?諛쒗몴", tag:"PPTX + 諛쒗몴?蹂??먮룞 ?앹꽦 ?꾨＼?꾪듃",
+   what:"?먮낯 ?먮즺瑜??ｌ쑝硫??쇰━ ?먮쫫쨌?붿옄?맞룰?瑗는텳igure 泥섎━쨌諛쒗몴 ?蹂멸퉴吏 洹쒖젙??????꾨＼?꾪듃. ?묐갚 誘몃땲硫 16:9, ?먮낯 ?섏튂 ?꾩쓽 蹂寃?湲덉?, 理쒖쥌 寃????ぉ源뚯? ?ы븿.",
+   feat:["?ъ슜???ㅼ젙(?쒓컙쨌?щ씪?대뱶 ?샕룹껌以? ?낅젰","?щ씪?대뱶+DOCX ?蹂?2?뚯씪 ?곗텧","?섏떇쨌Algorithm쨌Figure ?ㅻ챸 洹쒖튃"],
+   use:[["step","?섏궗?⑹옄 ?ㅼ젙?숈쓣 梨꾩슦怨??꾨＼?꾪듃 ?꾩껜瑜?李멸퀬?먮즺? ?④퍡 AI???낅젰"]],
+   url:"https://ownos.notion.site/AI-3be79d17f93880baba72efa672507553", kind:"notion"},
+  {n:"Claude 횞 PubMed 횞 Notion", cat:"notion", star:"狩??곌뎄??, tag:"?쇰Ц 寃?됤넂?붿빟?믩끂???뺣━ ?먮룞???명똿",
+   what:"PubMed쨌Notion 而ㅻ꽖?곕? ?곌껐?섍퀬 ?대씪?곕뱶 猷⑦떞???덉빟?? ?쇰Ц???먮룞 寃?됀룹슂?쏀빐 ?몄뀡 DB???볥뒗 15遺??명똿 媛?대뱶. Claude Pro+ ?곗뒪?ы깙 ??湲곗?.",
+   feat:["PubMed쨌Notion MCP 而ㅻ꽖???곌껐","?섎ℓ???덈꼍 6?쒋??대씪?곕뱶 猷⑦떞 ?덉빟","?좑툘 URL??媛쒖씤 ?좏겙 ?ы븿 ??怨듭쑀 二쇱쓽"],
+   use:[["step","而ㅻ꽖??異붽? ??沅뚰븳 ?ㅼ젙 ??Code ??猷⑦떞 ????猷⑦떞(?대씪?곕뱶)"]],
+   url:"https://dawn-tortoise-722.notion.site/Claude-AI-PubMed-Notion-3b85ca12c7ac805fb70bcb9eaff150e7", kind:"notion"},
+  {n:"7???대줈??AI 吏곸썝 留뚮뱾湲?, cat:"notion", star:"狩??먮룞??, tag:"?대줈?쒕? ?먮룞???쒖뒪?쒖쑝濡??명똿?섎뒗 7???뚮옖",
+   what:"Day1 ??븷 ?뺤쓽遺??Day7 寃?좉퉴吏, ?대줈?쒕? ?뚰겕?뚮줈쨌猷⑦떞 ?ㅽ깮?쇰줈 留뚮뱾??留ㅼ씪 ????쇳븯寃??섎뒗 而ㅻ━?섎읆. Chat/Cowork/Code ?명꽣?섏씠???좏깮 ?덈궡 ?ы븿.",
+   feat:["??븷쨌沅뚰븳쨌?덉쭏湲곗? 1?섏씠吏 臾몄꽌","?쇨컙/二쇨컙/?대깽???섎룞 猷⑦떞 4醫?,"二쇰떦 4~10?쒓컙 ?덉빟 紐⑺몴"],
+   use:[["step","媛?대뱶瑜?蹂듭궗???대줈?쒖뿉寃?二쇨퀬 ?섏씠?濡??명똿 ?꾩?以섃??붿껌"]],
+   url:"https://app.notion.com/p/7-AI-35f1061c8a6380c4bd19ce43569071af", kind:"notion"},
+  {n:"?대줈???쒖옉 ?꾩닔 3媛吏", cat:"notion", star:"", tag:"硫붾え由?쨌 GPT ?댁쟾 쨌 臾대즺 ?먭꺽利?,
+   what:"?대줈?쒕? 泥섏쓬 ?명똿????諛붾줈 ??3媛吏: 梨꾪똿 湲곕줉 硫붾え由?ON, GPT/?쒕??섏씠 ??붾궡??쓣 ?대줈??硫붾え由щ줈 ?댁쟾, Anthropic 臾대즺 ?먭꺽利?skilljar) ?쒖슜.",
+   feat:["Settings ??Capabilities 硫붾え由?耳쒓린","GPT 硫붾え由?export ?꾨＼?꾪듃 ?쒓났","skilljar 肄붿뒪 異붿쿇 ?꾨＼?꾪듃"],
+   use:[["step","?꾨＼?꾪듃 蹂듭궗 ??GPT?먯꽌 export ???대줈??湲곕뒫?브??몄삤湲곗뿉 遺숈뿬?ｊ린"]],
+   url:"https://app.notion.com/p/3-32e1061c8a6380a482eac67dbcbcbf94", kind:"notion"},
+  {n:"?대줈?쑣룹퐫?깆뒪 ?쒕룄 ?섎━湲?, cat:"notion", star:"", tag:"?좏겙 ?덉빟 ?ㅽ뵂?뚯뒪 2媛??뚭컻",
+   what:"寃곗젣 ?뚮옖???щ━湲??꾩뿉 ?좏겙 ?뚮퉬瑜?以꾩씠???꾧뎄 2媛??뚭컻 ??肄붾뱶踰좎씠??吏??code-review-graph)? 肄붾뱶 ?덉젣(ponytail). ?④낵???꾨줈?앺듃 洹쒕え???곕씪 ?ㅻ? ???덉쓬.",
+   feat:["code-review-graph: ?꾩슂??遺遺꾨쭔 ?쎄쾶","ponytail: 遺덊븘?뷀븳 肄붾뱶 異뺤냼","???섏삤?덈젮 ?좏겙 ?섏뿀?ㅲ??댁뒋???멸툒"],
+   use:[["cmd","pip install code-review-graph && code-review-graph install"]],
+   url:"https://app.notion.com/p/2-3a41061c8a638064be0ff2872c6631d2", kind:"notion"},
+  {n:"?대줈??肄붾뱶 횞 ?듭떆?붿뼵 ?몄빻??釉뚮젅??, cat:"notion", star:"狩?吏?앷?由?, tag:"媛쒖씤 吏?앸쿋?댁뒪 援ъ텞 媛?대뱶",
+   what:"?듭떆?붿뼵 Vault???명듃瑜?濡쒖뺄濡??볤퀬 Claude Code媛 ?뺣━쨌?곌껐쨌寃?됲븯??AI ?몄빻??釉뚮젅??援ъ텞踰? Karpathy??LLM Wiki ?쒖뒪???꾨＼?꾪듃濡??대뜑 援ъ“瑜??먮룞 ?앹꽦.",
+   feat:["raw/wiki/index/log 援ъ“ ?먮룞??,"Ingest쨌Query쨌洹몃옒???쒓컖???뚰겕?뚮줈","?몄뀡 ?깆뿉???곗씠??import"],
+   use:[["step","?듭떆?붿뼵 Vault ?앹꽦 ??Claude Code濡??대뜑 ?곌껐"],["step","Karpathy LLM Wiki Gist ?꾨＼?꾪듃 ?낅젰"]],
+   url:"https://app.notion.com/p/x-AI-3ba1061c8a6381bfbce4e065c84847a0", kind:"notion"},
+  {n:"罹≪뻔 SRT ?먮쭑 ?꾩쟾 ?뺣났", cat:"notion", star:"", tag:"?륂뤌 ?먮쭑(SRT) 留뚮뱾湲??ㅻТ 媛?대뱶",
+   what:"?대줈諛붾끂?맞톅rew쨌ChatGPT濡??ㅽ? ?녿뒗 SRT ?먮쭑??留뚮뱾??罹≪뻔??遺덈윭?ㅻ뒗 諛⑸쾿. 諛⑸쾿蹂??뺥솗?꽷룸궃?대룄 鍮꾧탳???ы븿. (AI ?꾧뎄?쇨린蹂대떎 ?곸긽 ?몄쭛 ??",
+   feat:["?대줈諛붾끂??Vrew/GPT/援ш??낆뒪 4諛⑸쾿","罹≪뻔 ?먮쭑 ?쇨큵 ?ㅽ????곸슜","UTF-8 ?몄퐫?????ㅼ닔 ?닿껐"],
+   use:[["step","SRT ?앹꽦 ??罹≪뻔 ?띿뒪?멤븐옄留?媛?몄삤湲???紐⑤몢 ?몄쭛"]],
+   url:"https://spangled-mandrill-779.notion.site/SRT-337a5c5eebbd80feb1fdcfd0e703cebd", kind:"notion"},
+
+  {n:"?대줈??肄붾뱶 ?꾩닔 MCP 5媛?, cat:"notion", star:"", tag:"Playwright쨌Chrome DevTools쨌Glif쨌Perplexity쨌Firecrawl",
+   what:"湲곕낯 ?대줈?쒓? 紐??섎뒗 寃??ㅼ떆媛?寃?됀룸툕?쇱슦? 議곗옉쨌臾몄꽌 ?섏쭛쨌?대?吏 ?앹꽦)??硫붿슦??MCP 5媛쒕? ??踰덉뿉 ?ㅼ튂?섍퀬 ?곌껐???덉쑝濡??뺤씤?섎뒗 ?쒖꽌 媛?대뱶.",
+   feat:["???놁씠 ?섎뒗 3媛?癒쇱? ?????꾩슂 2媛?,"claude mcp list 濡?Connected ?뺤씤","媛??꾧뎄媛 硫붿슦???섍뎄硫띯??쒕줈 ?뺣━"],
+   use:[["cmd","claude mcp add playwright -- npx @playwright/mcp@latest"],["cmd","claude mcp list"]],
+   url:"https://app.notion.com/p/MCP-5-3b228466a54e811eb918dd742a075232", kind:"notion"},
+  {n:"?대줈???꾩닔 MCP 媛?대뱶 (珥덈낫??", cat:"notion", star:"", tag:"24媛?MCP瑜?吏곸뾽蹂꾨줈 怨⑤씪 ?곕뒗 ?뺤큹蹂??덈궡",
+   what:"?섏꽕移섃숆? 泥섏쓬???щ엺 湲곗??쇰줈, 以鍮꾨Ъ 3媛??대줈???곗뒪?ы넲쨌Node.js쨌API ??遺???ㅼ젙 ?뚯씪 ?몄쭛源뚯? ?????MCP ?낅Ц 媛?대뱶. 24媛??꾧뎄瑜?踰꾪궥蹂꾨줈 ?뚭컻.",
+   feat:["?ㅼ튂瑜??대줈?쒖뿉寃??쒗궎???꾨＼?꾪듃","claude_desktop_config.json ?몄쭛踰?,"?섎궡 ?쇱뿉 留욌뒗 5媛쒋?吏곸뾽蹂?異붿쿇"],
+   use:[["step","?대줈???곗뒪?ы넲 ?ㅼ젙 ??Developer ??Edit Config"]],
+   url:"https://app.notion.com/p/MCP-39d7d0f198f680de8928da03a973b5a1", kind:"notion"},
+  {n:"?대줈??hwpx ?ㅽ궗 怨듭쑀", cat:"notion", star:"狩??숈쐞?쇰Ц HWP", tag:"HWPX ?ㅽ궗 ?ㅼ슫쨌?묒떇 ?깅줉 諛⑸쾿",
+   what:"?대줈?쒖슜 hwpx ?ㅽ궗???대젮諛쏆븘, assets ?대뜑???묒떇 ?뚯씪(report-template.hwpx)?????묒떇?쇰줈 援먯껜?????ㅽ궗濡??깅줉???곕뒗 諛⑸쾿. (異쒖쿂: ?몄쭛?륯 ?좏뒠釉?",
+   feat:["Code ??Download ZIP","assets??report-template.hwpx 援먯껜","?대줈???ㅼ젙 ?섏뒪?р숈뿉 ?대뜑 ?깅줉"],
+   use:[["step","ZIP ?댁젣 ???묒떇 援먯껜 ???ъ븬異????ㅽ궗 ?깅줉"]],
+   url:"https://military-lilac-174.notion.site/hwpx-360c601852d1807d8e8ffe902dc467c9", kind:"notion"},
+  {n:"AI ?륂뤌(由댁뒪) ?곸긽 ?먮룞???뚯씠?꾨씪??, cat:"notion", star:"", tag:"?대줈?쒓? 吏?섑븯???蹂멤넂?뚮뜑?믩컻???먮룞??,
+   what:"?먮낯 ?대┰留?二쇰㈃ ?蹂멤넂?섎젅?댁뀡?믪옄留됀룹뒪?곗빱?묪GM?믪쑀?쒕툕쨌?몄뒪? 諛쒗뻾源뚯? 肄붾뱶(Python+FFmpeg)濡??먮룞 泥섎━?섎뒗 ?뚯씠?꾨씪?몄쓽 ?꾧뎄 ?ㅽ깮쨌鍮꾩슜 ?뺣━. ?좊즺??Claude ?섎굹肉?",
+   feat:["Claude Code ?ㅼ??ㅽ듃?덉씠??+ ElevenLabs TTS","KLIPY(臾대즺 ?ㅽ떚而?쨌FFmpeg쨌Pillow","臾몄옣 ?댁떆 罹먯떛?쇰줈 TTS ?щ젅???덉빟"],
+   use:[["step","?먮낯 ?대┰ ?대뜑 ?쒓났 ???蹂?而⑦럩 ???ㅽ겕由쏀듃 ?먮룞 ?뚮뜑"]],
+   url:"https://puzzle-voice-64f.notion.site/AI-3b55e7fa3f8f80c2a51dc499a3a9474b", kind:"notion"},
+  {n:"?대줈??肄붾뱶 ?곸긽 ?몄쭛 (?꾨＼?꾪듃 紐⑥쓬)", cat:"notion", star:"", tag:"?몄쭛湲??놁씠 臾몄옣?쇰줈 ?섎뒗 ?곸긽 ?몄쭛",
+   what:"?몄쭛 ?꾨줈洹몃옩?????닿퀬 ?대줈??肄붾뱶??洹몃?濡?移????덈뒗 ?몄쭛 吏?쒕Ц 紐⑥쓬(而력룹옄留됀룸━?꾨젅?대컢쨌諛곌꼍?쒓굅쨌洹몃옒?승룻슚怨쇱쓬쨌?λ㈃ ?앹꽦). (諛뺤꽭以)",
+   feat:["鍮?援ш컙쨌以묐났 ?뚯씠???먮룞 而?,"?먮쭑 ?ㅽ????섏??쒕쾲?대옉 ?묎컳?닳??ъ궗??,"?섍????????섎㈃ 媛?몄삤吏 留댿??뺣났 ?덇컧"],
+   use:[["step","@?뚯씪紐????곸긽 ?몄쭛?댁쨾 ??泥섎읆 吏?쒕Ц ?낅젰"]],
+   url:"https://app.notion.com/p/3c23c1398b0b81f78719d9c30b105a8f", kind:"notion"},
+  {n:"??留덉씠 ?대줈??肄붾뱶 (OMC)", cat:"notion", star:"", tag:"??븷蹂??먯씠?꾪듃濡?怨꾪쉷?믨뎄?꾟넂寃利앪넂?섏젙",
+   what:"?대줈??肄붾뱶???щ윭 ??븷??AI ?먯씠?꾪듃瑜?遺숈뿬 怨꾪쉷?믨뎄?꾟넂寃利앪넂?섏젙源뚯? ?댁뼱 吏꾪뻾?섍쾶 ?섎뒗 ?뚮윭洹몄씤(Yeachan-Heo/oh-my-claudecode)???ㅼ튂쨌?ъ슜 媛?대뱶.",
+   feat:["?묒뾽????븷蹂꾨줈 ?섎닠 愿由?,"?묒? ?섏젙~???由ы뙥?곕쭅源뚯?","肄붾뜳?ㅼ슜 ?섏삤 留덉씠 肄붾뜳?ㅲ숇룄 ?덉쓬"],
+   use:[["cmd","/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode"],["cmd","/plugin install oh-my-claudecode"]],
+   url:"https://app.notion.com/p/3a7c601852d180f98afad5c46393eae2", kind:"notion"},
+  {n:"?대줈???꾨＼?꾪듃 5媛쒕줈 ?몄뒪?洹몃옩 ?쒖옉", cat:"notion", star:"", tag:"二쇱젣?믪젙泥댁꽦??0??濡쒕뱶留듈넂由댁뒪?믩룄???꾨왂",
+   what:"?대줈?쒕줈 ?몄뒪?洹몃옩??泥섏쓬遺??援ъ“?곸쑝濡??ㅼ슦???꾨＼?꾪듃 5醫?紐⑥쓬. 媛??꾨＼?꾪듃??[蹂듭궗???꾨＼?꾪듃]???댁꽕]???ㅼ쟾 ?덉떆]???쒖슜 ?щ?] ?쒖쑝濡??뺣━????붿갹??遺숈뿬?ｊ린留??섎㈃ ??",
+   feat:["媛먯씠 ?꾨땲???쒖옣遺꾩꽍?쇰줈 二쇱젣 ?좎젙(湲고쉶 ?먯닔쨌?쇨뎬?몄텧 ?щ? ??","怨꾩젙紐끒룹냼媛쑣룻럹瑜댁냼?샕룹퐯?먯툩 湲곕뫁 4媛?,"90??罹섎┛?붋룸┫?????蹂맞룻빐?쒗깭洹?AB ?뚯뒪??],
+   use:[["step","?꾨＼?꾪듃 遺숈뿬?ｊ린 ????0? 吏곸옣?몄슜留?異붾젮以섃숈쿂??議곌굔 醫곹엳湲?]],
+   url:"https://surf-push-7ae.notion.site/5-3a455393f0f381f1986ef1dc0652ace5", kind:"notion"},
+
+  {n:"?대줈???붾㈃??珥뚯뒪?ъ슫 吏꾩쭨 ?댁쑀", cat:"read", star:"", tag:"?대줈???붿옄???꾩꽦???믪씠???겶룸룄援?,
+   what:"?대줈?쒕줈 UI瑜?留뚮뱾 ??寃곌낵臾쇱씠 珥뚯뒪?ъ슫 ?댁쑀瑜?吏싰퀬, ?붿옄??媛쒖꽑 ??3媛吏? 臾대즺 ?ㅽ뵂?뚯뒪瑜??뚭컻?섎뒗 湲(AINOW 而ㅻ??덊떚).",
+   feat:["Playwright쨌Taste Skill쨌Image to Code ?뚭컻","援ш? ?낆뒪 ?ㅼ튂 媛?대뱶遺??쒓났","?ㅽ뻾 ?꾩＜ ?덈궡"],
+   use:[["step","湲 ?쎄퀬 ?뚭컻???붿옄???꾧뎄 ?ㅼ튂쨌?곸슜"]],
+   url:"https://yeongseon.kr/archive/3bfd86104de280319550e7e13a18a4ee.html", kind:"article"},
+  {n:"AI ?뚯꽕 ?먯? StoryScope ?댁꽕", cat:"read", star:"狩?湲?곌린", tag:"臾몄껜 ?꾨땶 ?섏씠?쇨린 援ъ“?숇줈 AI 湲 ?먮퀎",
+   what:"61,608嫄?遺꾩꽍?쇰줈 ?쒖궗 援ъ“留뚯쑝濡?AI ?뚯꽕??93.2% ?뺥솗?꾨줈 媛?ㅻ궦 StoryScope ?곌뎄瑜?????곌퀬, ??湲 ?먭?쨌?닿퀬???곸슜?섎뒗 踰뺤쓣 ?ㅻ， 湲.",
+   feat:["AI 湲??4?듦? / ?멸컙 湲???뱀쭠","紐⑤뜽蹂?Claude쨌GPT쨌Gemini) 吏臾?李⑥씠","AI ??吏꾨떒 ?꾨＼?꾪듃 + 8?④퀎 ?닿퀬"],
+   use:[["step","?쒓났 ?꾨＼?꾪듃濡???湲 AI ??吏꾨떒 ???닿퀬"]],
+   url:"https://lazyowen.com/guides/storyscope-ai-fiction", kind:"article"},
+  {n:"臾대즺 ?곸긽 AI ?ㅽ뒠?붿삤 ?낅Ц", cat:"read", star:"", tag:"Open Generative AI ?ㅼ튂쨌?쒖슜 媛?대뱶",
+   what:"?좊즺 ?곸긽 AI ???200+ ?대?吏쨌?곸긽 紐⑤뜽??紐⑥? 臾대즺 ?뚮옯??Open Generative AI濡??쒖옉?섎뒗 30遺??명똿 媛?대뱶.",
+   feat:["Image/Video/Cinema/Lip Sync 紐⑤뱢","muapi-cli쨌Claude Code쨌Codex ?곕룞","Mac쨌Win쨌Linux쨌釉뚮씪?곗?"],
+   use:[["step","Open Generative AI ?ㅼ튂 ???ㅽ뒠?붿삤 紐⑤뱢 ?ъ슜"]],
+   url:"https://lazyowen.com/guides/open-generative-ai", kind:"article"},
+  {n:"?대줈???붿옄???꾩닔 ?꾧뎄 5??, cat:"read", star:"", tag:"?붿옄??湲곗?쨌寃利??명똿 5?꾧뎄",
+   what:"?대줈?쒓? ???섏? UI瑜?留뚮뱾?꾨줉 ?붿옄??湲곗?쨌?덊띁?곗뒪쨌?덉쭏 寃利앹쓣 ?명똿?섎뒗 臾대즺 ?ㅽ뵂?뚯뒪 5媛吏瑜??뚭컻?섎뒗 湲.",
+   feat:["Awesome DESIGN.md쨌Image to Code","Taste(?⑦꽩 ?덊뵾)쨌Agent Browser","Web Design Guidelines(諛고룷 ???먭?)"],
+   use:[["step","5媛??꾧뎄瑜??뚰겕?뚮줈???쒖꽌?濡??명똿"]],
+   url:"https://lazyowen.com/guides/claude-design-top-5-skill", kind:"article"},
+  {n:"諛붿씠釉뚯퐫???꾩닔 ?꾧뎄 3媛?, cat:"read", star:"", tag:"怨꾪쉷쨌理쒖떊?굿룸낫??怨듬갚 硫붿슦湲?,
+   what:"?대줈??肄붾뵫??3? 臾몄젣(諛⑺뼢 ?곸떎쨌?≪? 臾몃쾿쨌蹂댁븞 痍⑥빟??瑜?硫붿슦??臾대즺 ?꾧뎄 3媛吏 ?뚭컻 湲.",
+   feat:["ECC: 肄붾뵫 ??怨꾪쉷쨌?뚯뒪?맞룹옄泥대━酉?,"Context7: 理쒖떊 ?쇱씠釉뚮윭由?臾몄꽌","Strix: 諛고룷 ??紐⑥쓽怨듦꺽 蹂댁븞?먭?"],
+   use:[["step","3媛??꾧뎄 ?ㅼ튂 ??肄붾뵫 ?뚰겕?뚮줈 ?곸슜"]],
+   url:"https://lazyowen.com/guides/vibecoding3", kind:"article"},
+  {n:"?좏겙 3諛곕줈 ?ㅻ옒 ?곕뒗 ?꾧뎄 3媛?, cat:"read", star:"", tag:"?④퀎蹂??좏겙 ??퉬 李⑤떒",
+   what:"?대줈??肄붾뱶?먯꽌 ?좏겙???덈뒗 吏?먮퀎濡???퉬瑜?留됰뒗 臾대즺 ?꾧뎄 3媛吏 ?뚭컻. ?대줎 ?덇컧瑜좊낫???ㅼ륫 寃利앹쓣 媛뺤“.",
+   feat:["Ponytail(異쒕젰 異뺤냼)쨌Graphify(肄붾뱶留?","Headroom(?꾩넚 ???뺤텞 ?꾨줉??","headroom savings濡??ㅼ젣 ?덇컧 ?뺤씤"],
+   use:[["cmd","headroom savings"]],
+   url:"https://lazyowen.com/guides/tokensave", kind:"article"},
+  {n:"Claude Code ELI5 媛?대뱶", cat:"read", star:"", tag:"蹂듭옟??媛쒕뀗???쎄쾶 ?ㅻ챸?섎뒗 ?뚮윭洹몄씤",
+   what:"湲곗닠 媛쒕뀗쨌?꾨줈?앺듃 援ъ“瑜??쎄쾶 ??댁＜??ELI5 ?뚮윭洹몄씤 ?ㅼ튂쨌?ъ슜踰뺢낵, ?쒖씠??3?④퀎 而ㅼ뒪? ?쁢li???ㅽ궗???뺣━??湲.",
+   feat:["/eli5 <二쇱젣> ?щ옒??紐낅졊","?⑤낫?㈑룹퐫?쒗쓲由꽷룹옣?좊텇???ㅻТ ?꾨＼?꾪듃","5???낅Ц/?ㅻТ 3?④퀎 ?ㅻ챸"],
+   use:[["cmd","/eli5 <二쇱젣>"]],
+   url:"https://www.gymcoding.co/articles/claude-code-eli5-guide", kind:"article"},
+
+  {n:"TensorFlow Playground", cat:"viz", star:"", tag:"釉뚮씪?곗??먯꽌 ?좉꼍留?吏곸젒 ?숈뒿",
+   what:"肄붾뱶 ?놁씠 ?묒? ?좉꼍留앹쓣 ?ㅼ떆媛??숈뒿?쒗궎硫?痢돠룸돱?걔룻솢?깊솕?⑥닔쨌?숈뒿瑜좎쓣 諛붽씀硫?寃곗젙寃쎄퀎쨌?먯떎??利됱떆 ?쒓컖?붾릺??援먯쑁 ?꾧뎄.",
+   feat:["?곗씠?곗뀑쨌?섏씠?쇳뙆?쇰????ㅼ떆媛?議곗젅","寃곗젙寃쎄퀎쨌?먯떎 利됱떆 ?쒓컖??,"?ㅽ뵂?뚯뒪"],
+   use:[["step","?곗씠?걔룻뙆?쇰????좏깮 ?????숈뒿 愿李?]],
+   url:"https://playground.tensorflow.org", kind:"viz"},
+  {n:"AttentionViz", cat:"viz", star:"", tag:"?몃옖?ㅽ룷癒??댄뀗???꾩뿭 ?쒓컖??,
+   what:"BERT쨌GPT??self-attention??荑쇰━쨌???꾨쿋??怨듦컙???ъ쁺???ㅻ뱶 ?꾨컲??援ъ“???⑦꽩???먯깋?섎뒗 ?곌뎄???쒓컖??Harvard/Google).",
+   feat:["?댄뀗???ㅻ뱶蹂?援곗쭛쨌?⑦꽩","臾몄옣 ?⑥쐞瑜??섎뒗 ?꾩뿭 愿李?,"?곌뎄 ?곕え"],
+   use:[["step","?ㅻ뱶 ?좏깮 ???좏겙 援곗쭛 ?뺣?쨌?먯깋"]],
+   url:"https://attentionviz.com", kind:"viz"},
+  {n:"Transformer Explainer", cat:"viz", star:"狩??몃옖?ㅽ룷癒?, tag:"釉뚮씪?곗???GPT-2 ?뚮━???댁꽕湲?,
+   what:"GPT-2(small)瑜?釉뚮씪?곗??먯꽌 吏곸젒 援щ룞?섎ŉ ?좏겙?붴넂?꾨쿋?⒱넂硫?고뿤???댄뀗?섃넂MLP?믩떎???⑥뼱 ?덉륫 ??怨쇱젙???명꽣?숉떚釉뚰븯寃?蹂댁뿬二쇰뒗 ?꾧뎄(Georgia Tech).",
+   feat:["?꾨＼?꾪듃 ?낅젰 ???ㅼ떆媛?異붾줎","temperature쨌top-k/p 議곗젅","?댄뀗??留돠룻솗瑜좊텇???대┃ ?먯깋"],
+   use:[["step","?꾨＼?꾪듃 ?낅젰 ???④퀎蹂??섏튂 愿李?]],
+   url:"https://poloclub.github.io/transformer-explainer", kind:"viz"},
+  {n:"Embedding Projector", cat:"viz", star:"", tag:"怨좎감???꾨쿋??3D ?먯깋",
+   what:"?⑥뼱쨌?대?吏 ?꾨쿋?⑹쓣 PCA쨌t-SNE쨌UMAP?쇰줈 ?李⑥썝 ?ъ쁺??援곗쭛 援ъ“瑜??쒓컖 ?먯깋?섎뒗 TensorFlow ?꾧뎄.",
+   feat:["???꾨쿋??TSV) ?낅줈??媛??,"理쒓렐???댁썐 寃??,"?ъ쁺 諛⑹떇 ?꾪솚"],
+   use:[["step","?곗씠??濡쒕뱶 ?????좏깮 ???댁썐 ?먯깋"]],
+   url:"https://projector.tensorflow.org", kind:"viz"},
+  {n:"Teachable Machine", cat:"viz", star:"", tag:"肄붾뵫 ?놁씠 紐⑤뜽 ?숈뒿(?몄퐫??",
+   what:"?대?吏쨌?뚮━쨌?ъ쫰瑜??뱀틺/留덉씠?щ줈 紐⑥븘 肄붾뱶 ?놁씠 遺꾨쪟 紐⑤뜽???숈뒿?쒗궎??Google ?몄퐫???꾧뎄. TensorFlow.js ?깆쑝濡?export.",
+   feat:["?대옒?ㅻ퀎 ?섑뵆 ?뱁솕쨌?낅줈??,"Train ???ㅼ떆媛??덉륫","紐⑤뜽 ?대낫?닿린"],
+   use:[["step","?섑뵆 ?섏쭛 ??Train ??export"]],
+   url:"https://teachablemachine.withgoogle.com", kind:"no-code"},
+  {n:"Distill", cat:"viz", star:"", tag:"?명꽣?숉떚釉?ML ?댁꽕 ???(?꾩뭅?대툕)",
+   what:"ML 媛쒕뀗???명꽣?숉떚釉??쒓컖?붾줈 ?ㅻ챸?섎뜕 ?숇즺?ъ궗 ??? ?댁꽍媛?μ꽦쨌?쒓컖??紐낆옉??留롫떎.",
+   feat:["紐낆옉 ?꾪떚???꾩뭅?대툕","?댁꽍媛?μ꽦쨌?쒓컖???뱁솕","??2021???댄썑 ?좉퇋 諛쒗뻾 以묐떒"],
+   use:[["step","湲곗〈 ?꾪떚???대엺?쇰줈 ?숈뒿"]],
+   url:"https://distill.pub", kind:"archive"},
+  {n:"Google AI Experiments", cat:"viz", star:"", tag:"釉뚮씪?곗? AI ?ㅽ뿕 紐⑥쓬 (??Google Labs)",
+   what:"Quick Draw쨌Teachable Machine ??釉뚮씪?곗? AI ?ㅽ뿕??紐⑥? Google ?쇱??댁뒪. ?꾩옱 吏꾩엯?먯? Google Labs濡?由щ떎?대젆?몃맖.",
+   feat:["泥댄뿕??AI ?곕え ?ㅼ닔","釉뚮씪?곗??먯꽌 諛붾줈 議곗옉","??labs.google濡??듯빀쨌?꾪솚"],
+   use:[["step","媛쒕퀎 ?ㅽ뿕 ?댁뼱 釉뚮씪?곗??먯꽌 泥댄뿕"]],
+   url:"https://experiments.withgoogle.com/collection/ai", kind:"gallery"},
+  {n:"Lobe", cat:"viz", star:"", tag:"?몄퐫??ML ?숈뒿 ??(媛쒕컻 以묐떒)",
+   what:"?쒕옒洹몄븻?쒕∼?쇰줈 ?대?吏 遺꾨쪟 紐⑤뜽???숈뒿?쒗궎??Microsoft 臾대즺 ?곗뒪?ы넲 ?? ?꾩옱 媛쒕컻 以묐떒, ?꾨찓?몄? GitHub濡?由щ떎?대젆??",
+   feat:["(怨쇨굅) ?쇰꺼蹂??대?吏 ?먮룞 ?숈뒿","?ㅼ뼇???뚮옯??export","??媛쒕컻 醫낅즺 ???좉퇋 ?ъ슜 遺덇?"],
+   use:[["step","?꾩옱 ?ъ슜 遺덇? (?꾩뭅?대툕 李멸퀬??"]],
+   url:"https://www.lobe.ai", kind:"醫낅즺"},
+  {n:"Playground AI", cat:"viz", star:"", tag:"AI ?대?吏 ???붿옄???ㅽ뒠?붿삤濡??꾪솚",
+   what:"怨쇨굅 臾대즺 AI ?대?吏 ?앹꽦?쇰줈 ?좊챸?덉쑝???꾩옱??濡쒓퀬쨌援우쫰쨌?ъ뒪???깆쓣 留뚮뱶??AI ?붿옄???ㅽ뒠?붿삤濡??꾪솚. ?щ윭 紐⑤뜽쨌?쒗뵆由??쒓났.",
+   feat:["GPT Image쨌Nano Banana쨌Seedream ??,"?쒗뵆由온룸ぉ???꾧뎄","???쒖닔 ?대?吏 ?앹꽦 ???붿옄???쒖옉?쇰줈 蹂??],
+   use:[["step","?띿뒪???쒗뵆由우쑝濡??붿옄???앹꽦 ???몄쭛 ??export"]],
+   url:"https://playgroundai.com", kind:"webapp"},
+  {n:"DeepLearning.AI Short Courses", cat:"viz", star:"", tag:"Andrew Ng??臾대즺 ?④린 ?ㅼ쟾 媛뺤쥖",
+   what:"?꾨＼?꾪듃 ?붿??덉뼱留겶톀AG쨌?먯씠?꾪듃쨌LLM ?깆쓣 1~2?쒓컙 遺꾨웾?쇰줈 諛곗슦??臾대즺 媛뺤쥖 ?뚮옯?? Anthropic쨌OpenAI ?깃낵 ?묒뾽.",
+   feat:["100+ ?④린 媛뺤쥖","釉뚮씪?곗? ???명듃遺??ㅼ뒿","理쒖떊 二쇱젣 吏??異붽?"],
+   use:[["step","二쇱젣 媛뺤쥖 ?좏깮 ???ㅼ뒿怨??④퍡 ?섍컯"]],
+   url:"https://www.deeplearning.ai/short-courses", kind:"course"},
+  {n:"3Blue1Brown", cat:"viz", star:"", tag:"?섑븰쨌?좉꼍留??좊땲硫붿씠???댁꽕",
+   what:"Grant Sanderson??援먯쑁 梨꾨꼸. ?좉꼍留씲룹꽑?뺣??샕룸??곷텇??Manim ?좊땲硫붿씠?섏쑝濡??쒓컖?? ?ъ씠?몃뒗 ?곸긽쨌?먮즺 ?덈툕.",
+   feat:["?좉꼍留??쒕━利덇? ?뱁엳 ?좊챸","吏곴? 以묒떖 ?쒓컖 ?ㅻ챸","?쒕컻???좎?"],
+   use:[["step","二쇱젣蹂??곸긽쨌?덉뒯 ?쒖껌"]],
+   url:"https://www.3blue1brown.com", kind:"video"},
+  {n:"Weights & Biases Reports", cat:"viz", star:"", tag:"?ㅽ뿕 寃곌낵瑜?臾몄꽌濡?怨듭쑀",
+   what:"W&B ?ㅽ뿕異붿쟻 ?뚮옯?쇱쓽 湲곕뒫?쇰줈, ?숈뒿 吏?쑣룹감?맞룸텇?앹쓣 ?명꽣?숉떚釉?臾몄꽌濡?臾띠뼱 ?怨?怨듭쑀.",
+   feat:["run??洹몃옒?꽷룻몴瑜?由ы룷?몃줈","Experiments쨌Sweeps쨌Tables ?곌퀎","?묒뾽 怨듭쑀"],
+   use:[["step","run 寃곌낵 ??由ы룷??援ъ꽦 ??怨듭쑀"]],
+   url:"https://wandb.ai/site/reports", kind:"tool"},
+  {n:"Fast.ai", cat:"viz", star:"", tag:"Practical Deep Learning 臾대즺 媛뺤쥖",
+   what:"肄붾뵫 寃쏀뿕?먮? ?꾪븳 臾대즺 ?λ윭???ㅼ쟾 媛뺤쥖. ?깅떎??諛⑹떇?쇰줈 癒쇱? 留뚮뱾怨??대줎??梨꾩슫?? PyTorch쨌fastai쨌HF ?쒖슜.",
+   feat:["9媛??덉뒯(媛?~90遺?","Kaggle/?명듃遺??ㅼ뒿쨌諛고룷","Part 2: Stable Diffusion 湲곗큹"],
+   use:[["step","?덉뒯 ?곸긽 + ?명듃遺곸쑝濡?吏곸젒 援ы쁽"]],
+   url:"https://course.fast.ai", kind:"course"},
+  {n:"Explainpaper", cat:"viz", star:"狩??쇰Ц", tag:"?쇰Ц ?대젮??遺遺?AI ?ㅻ챸",
+   what:"?쇰Ц?먯꽌 ?댄빐 ???섎뒗 遺遺꾩쓣 ?섏씠?쇱씠?명븯硫?AI媛 ?ъ슫 ?ㅻ챸??利됱떆 二쇰뒗 ?꾧뎄. ?쇰Ц怨?Q&A쨌?먮룞 ?붿빟??",
+   feat:["PDF ?낅줈?????쒕옒洹명빐 ?ㅻ챸","?쒖씠?꽷룹뼵??50+) 議곗젅","臾대즺 tier + Pro"],
+   use:[["step","PDF ?낅줈?????대젮??臾몄옣 ?쒕옒洹?]],
+   url:"https://www.explainpaper.com", kind:"tool"},
+  {n:"Aixploria", cat:"viz", star:"", tag:"9,500+ AI ?꾧뎄 ?붾젆?곕━",
+   what:"9,500媛??댁긽 AI ?꾧뎄瑜?72媛?移댄뀒怨좊━濡??뺣━???붾젆?곕━쨌寃???ъ씠?? 留ㅼ씪 媛깆떊, Top 10/100쨌AI ?댁뒪 ?쒓났.",
+   feat:["移댄뀒怨좊━쨌?ㅼ썙??寃??,"媛???놁씠 ?좉퇋 ?꾧뎄 ?쒖텧","?좑툘 ?먮낯 URL??媛쒖씤 ?좏겙 ?ы븿?붽났??二쇱쓽"],
+   use:[["step","移댄뀒怨좊━/寃?됱쑝濡?紐⑹쟻蹂??꾧뎄 李얘린"]],
+   url:"https://www.aixploria.com/en/", kind:"directory"},
+];
+
+// ---- render ----
+const cats = document.getElementById('cats');
+const catColor = c => `var(--c-${c})`;
+function cmdHTML(use){
+  return use.map(([type,txt])=>{
+    const esc = txt.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    if(type==='cmd') return `<span class="c">$ ${esc}</span>`;
+    return `<span class="step">${esc}</span>`;
+  }).join('\n');
+}
+function cardHTML(t){
+  const feats = t.feat.map(f=>`<li>${f}</li>`).join('');
+  const star = t.star ? `<span class="star">${t.star}</span>` : '';
+  const short = t.url.replace(/^https?:\/\//,'').replace(/\/$/,'');
+  const shortDisp = short.length>42 ? short.slice(0,40)+'?? : short;
+  return `<article class="card" data-cat="${t.cat}" data-txt="${(t.n+' '+t.tag+' '+t.what+' '+t.feat.join(' ')+' '+t.cat).toLowerCase().replace(/"/g,'')}" style="--cc:${catColor(t.cat)}">
+    <div class="card-top"><div><h3>${t.n}</h3><p class="tagline">${t.tag}</p></div>${star}</div>
+    <p class="what">${t.what}</p>
+    <ul class="feat">${feats}</ul>
+    <p class="use-label">?ъ슜踰?/p>
+    <pre class="use">${cmdHTML(t.use)}</pre>
+    <div class="card-foot"><a href="${t.url}" target="_blank" rel="noopener">${shortDisp} ??/a><span class="kind">${t.kind}</span></div>
+  </article>`;
+}
+const counts = {};
+T.forEach(t=>counts[t.cat]=(counts[t.cat]||0)+1);
+CATS.forEach(([id,name,desc])=>{
+  const items = T.filter(t=>t.cat===id);
+  if(!items.length) return;
+  const sec = document.createElement('section');
+  sec.className='cat'; sec.id='sec-'+id; sec.style.setProperty('--cc', catColor(id));
+  sec.innerHTML = `<div class="cat-head" style="--cc:${catColor(id)}"><span class="dot"></span><h2>${name}</h2><span class="count">${items.length}</span></div>
+    <p class="cat-desc">${desc}</p>
+    <div class="grid">${items.map(cardHTML).join('')}</div>`;
+  cats.appendChild(sec);
+});
+
+// pills
+const pills = document.getElementById('pills');
+const catList = CATS.filter(c=>counts[c[0]]);
+let active = 'all';
+function mkPill(id,label,n){
+  const b=document.createElement('button'); b.className='pill'; b.dataset.id=id;
+  b.setAttribute('aria-pressed', id==='all'); b.type='button';
+  b.innerHTML = label + (n!=null?`<span class="n">${n}</span>`:'');
+  b.onclick=()=>{ active=id; document.querySelectorAll('.pill').forEach(p=>p.setAttribute('aria-pressed', p.dataset.id===id)); apply();
+    if(id!=='all'){ const el=document.getElementById('sec-'+id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); } };
+  return b;
+}
+pills.appendChild(mkPill('all','?꾩껜',T.length));
+catList.forEach(([id,name])=> pills.appendChild(mkPill(id, name.split(' 쨌 ')[0], counts[id])));
+
+// search + filter
+const q = document.getElementById('q');
+const empty = document.getElementById('empty');
+function apply(){
+  const term = q.value.trim().toLowerCase();
+  let anyGlobal=false;
+  document.querySelectorAll('section.cat').forEach(sec=>{
+    if(sec.id==='sec-lock') return;
+    const id = sec.id.replace('sec-','');
+    const catOK = (active==='all' || active===id);
+    let anyInSec=false;
+    sec.querySelectorAll('.card').forEach(card=>{
+      const match = catOK && (!term || card.dataset.txt.includes(term));
+      card.style.display = match?'':'none';
+      if(match){ anyInSec=true; anyGlobal=true; }
+    });
+    sec.style.display = anyInSec?'':'none';
+  });
+  empty.style.display = anyGlobal?'none':'block';
+}
+q.addEventListener('input', apply);
+apply();
+</script>
+
+</body>
+</html>
+
