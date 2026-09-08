@@ -1,6 +1,6 @@
 # 🧰 AI 툴킷 인덱스
 
-그동안 모아둔 깃허브·사이트·노션 링크 **70개**를 전부 확인해 “무엇을 하는지 / 어떻게 쓰는지”로 정리하고 **10개 카테고리**로 분류한 개인 참고 서고입니다.
+그동안 모아둔 깃허브·사이트·노션 링크 **84개**를 전부 확인해 “무엇을 하는지 / 어떻게 쓰는지”로 정리하고 **11개 카테고리**로 분류한 개인 참고 서고입니다.
 
 전체 내용은 검색·필터가 되는 한 장짜리 웹페이지 [`index.html`](index.html)에 담겨 있습니다. 카드마다 **무엇 · 핵심 기능 · 설치/사용 명령어 · 원본 링크**가 들어 있고, 상단 검색창과 카테고리 필터로 원하는 도구를 바로 찾을 수 있습니다.
 
@@ -12,19 +12,21 @@
 
 | 카테고리 | 개수 | 대표 |
 |---|---:|---|
-| 스킬 · 개발 방법론 | 8 | superpowers · agent-skills · ponytail · Task Observer |
+| 스킬 · 개발 방법론 | 10 | superpowers · agent-skills · ponytail · ModLens · GPT-Image2-Skill |
 | 컨텍스트 · 메모리 · 라우팅 인프라 | 6 | OmniRoute · claude-mem · Headroom · LangGraph |
 | 코드 · 문서 이해/생성 | 4 | RepoBrain · OpenWiki · drawDB · PDF Inspector |
+| 개발 도구 · 유틸리티 | 8 | Paseo · superset · ratty · flint-chart · KillerPDF · PureMac · watermarks-remover |
 | 프롬프트 · 글쓰기(한글) | 3 | prompt-master · im-not-ai · claw-hwp |
 | 연구 · 논문 도구 | 7 | open-science · PaperBanana · PixelNeRF · StoryScope |
-| 미디어 · 하드웨어 앱 | 3 | muscriptor · Parabolic · Tinkered AI |
-| 학습 · 실습(핸즈온) | 3 | cwc-workshops · a2ui · Vertex AI Pipelines |
+| 미디어 · 하드웨어 앱 | 6 | Voicebox · Upscayl · OGAM · muscriptor · Parabolic · Tinkered AI |
+| 학습 · 실습(핸즈온) | 4 | cwc-workshops · a2ui · Vertex AI Pipelines · DeepTutor |
 | AI 학습 · 시각화 · 실험 | 15 | TensorFlow Playground · Transformer Explainer · Explainpaper |
 | 가이드 · 아티클(블로그) | 7 | StoryScope 해설 · 바이브코딩 3도구 · ELI5 |
 | 노션 자료 · 프롬프트 | 14 | AI 발표자료 프롬프트 · PubMed 자동요약 · hwpx 스킬 |
 
-## ⭐ 관심사 연관 (논문 · 발표 · HWP · 자동화)
+## ⭐ 관심사 연관 (논문 · 발표 · HWP · 이미지 SR · 자동화)
 
+- **Upscayl** — Real-ESRGAN AI 이미지 업스케일러 (위성 SR 작업 참고용)
 - **PaperBanana** — 방법론 텍스트 → 논문급 다이어그램·통계 플롯 (NeurIPS/IEEE 스타일)
 - **open-science** — 로컬 우선 AI 연구 워크벤치 (Python/R 실행 + 결과물 출처 추적)
 - **PixelNeRF** — 소수 시점 이미지 → 3D 복원 (100줄 구현 예제)

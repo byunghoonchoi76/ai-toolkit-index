@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 70개를 기능·사용법으로 정리한 참고 서고">
+<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 84개를 기능·사용법으로 정리한 참고 서고">
 <title>AI ?댄궥 ?몃뜳??/title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +39,7 @@
     --c-lock: #9a3b4a;     --c-lock-bg: #f4e0e3;
     --c-viz: #7a4fb3;      --c-viz-bg: #eae2f6;
     --c-read: #b0567a;     --c-read-bg: #f6e2ea;
+    --c-util: #4f74a6;     --c-util-bg: #e2eaf3;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -71,6 +72,7 @@
       --c-notion: #9aa6b4;   --c-notion-bg: #232a34;
       --c-viz: #b79ae0;      --c-viz-bg: #241a3a;
       --c-read: #e08fac;     --c-read-bg: #3a1f2a;
+      --c-util: #8fb0dd;     --c-util-bg: #1a2740;
       --c-lock: #e0808f;     --c-lock-bg: #37222680;
       --c-lock-bg: #372226;
     }
@@ -94,6 +96,7 @@
     --c-lock: #e0808f; --c-lock-bg: #372226;
     --c-viz: #b79ae0; --c-viz-bg: #241a3a;
     --c-read: #e08fac; --c-read-bg: #3a1f2a;
+    --c-util: #8fb0dd; --c-util-bg: #1a2740;
   }
 
   * { box-sizing: border-box; }
@@ -229,9 +232,9 @@
   <div class="top-inner">
     <p class="eyebrow">Reference Index</p>
     <h1>紐⑥븘??AI ?꾧뎄쨌?먮즺 ?쒓퀬</h1>
-    <p class="lede">洹몃룞???섏쭛??源껎뿀釉뙿룹궗?댄듃쨌?몄뀡 留곹겕瑜??꾨? ?뺤씤???쒕Т?뉗쓣 ?섎뒗吏 / ?대뼸寃??곕뒗吏?앸줈 ?뺣━?섍퀬 10媛?移댄뀒怨좊━濡?遺꾨쪟?덉뒿?덈떎. 寃?됱갹怨??곷떒 ?꾪꽣濡??먰븯???꾧뎄瑜?諛붾줈 李얠쓣 ???덉뼱??</p>
+    <p class="lede">洹몃룞???섏쭛??源껎뿀釉뙿룹궗?댄듃쨌?몄뀡 留곹겕瑜??꾨? ?뺤씤???쒕Т?뉗쓣 ?섎뒗吏 / ?대뼸寃??곕뒗吏?앸줈 ?뺣━?섍퀬 11媛?移댄뀒怨좊━濡?遺꾨쪟?덉뒿?덈떎. 寃?됱갹怨??곷떒 ?꾪꽣濡??먰븯???꾧뎄瑜?諛붾줈 李얠쓣 ???덉뼱??</p>
     <div class="meta-row">
-      <span><b>?뺤씤쨌?뺣━ ?꾨즺</b> 70媛?(GitHub쨌?뮤룸끂??</span>
+      <span><b>?뺤씤쨌?뺣━ ?꾨즺</b> 84媛?(GitHub쨌?뮤룸끂??</span>
       <span><b>狩?愿?ъ궗 ?곌?</b> ?쇰Ц쨌諛쒗몴쨌?먮룞?붋룹??앷?由?/span>
     </div>
   </div>
@@ -259,6 +262,7 @@ const CATS = [
   ["skills","?ㅽ궗 쨌 媛쒕컻 諛⑸쾿濡?,"Claude Code쨌Codex ???먯씠?꾪듃???ㅼ튂??肄붾뵫 ?뚰겕?뚮줈쨌?덉쭏쨌?됰룞???ㅼ옟???ㅽ궗/?뚮윭洹몄씤 臾띠쓬."],
   ["infra","而⑦뀓?ㅽ듃 쨌 硫붾え由?쨌 ?쇱슦???명봽??,"?щ윭 LLM??臾띔퀬, ?몄뀡 湲곗뼲???좎??섍퀬, ?좏겙??以꾩씠怨? ?몃? ?쒕퉬?ㅼ뿉 ?곌껐?섎뒗 ?먯씠?꾪듃 ?섎? 援ъ“."],
   ["dev","肄붾뱶 쨌 臾몄꽌 ?댄빐/?앹꽦 ?꾧뎄","肄붾뱶踰좎씠?ㅻ? ?댄빐쨌臾몄꽌?뷀븯嫄곕굹 DB쨌PDF 媛숈? 臾몄꽌瑜??ㅻ（??媛쒕컻 ?ㅻТ ?꾧뎄."],
+  ["util","媛쒕컻 ?꾧뎄 쨌 ?좏떥由ы떚","肄붾뵫 ?먯씠?꾪듃 ?ㅼ??ㅽ듃?덉씠?샕룻꽣誘몃꼸쨌PDF ?몄쭛쨌?쒖뒪???뺣━ ???낅┰ ?ㅽ뻾??媛쒕컻 ?꾧뎄? ?좏떥由ы떚(?遺遺?臾대즺쨌?ㅽ뵂?뚯뒪)."],
   ["write","?꾨＼?꾪듃 쨌 湲?곌린 (?쒓? ?뱁솕)","?꾨＼?꾪듃瑜??뺢탳?섍쾶 留뚮뱾嫄곕굹, AI ?곕? 吏?곌굅?? ?쒓? HWP 臾몄꽌瑜??ㅻ（???묐Ц ?꾧뎄."],
   ["research","?곌뎄 쨌 ?쇰Ц ?꾧뎄","?곌뎄 ?뚰겕踰ㅼ튂, ?쇰Ц 洹몃┝ ?앹꽦, ?곗씠?곗뀑쨌踰ㅼ튂留덊겕, ?쇰Ц 援ы쁽 ?덉젣 ???숈닠 ?묒뾽??"],
   ["apps","誘몃뵒??쨌 ?섎뱶?⑥뼱 ??,"?뚯븙 梨꾨낫, ?곸긽 ?ㅼ슫濡쒕뱶, ?섎뱶?⑥뼱 ?ㅺ퀎 ???낅┰ ?ㅽ뻾???좏뵆由ъ??댁뀡쨌?쒕퉬??"],
@@ -639,6 +643,77 @@ const T = [
    feat:["移댄뀒怨좊━쨌?ㅼ썙??寃??,"媛???놁씠 ?좉퇋 ?꾧뎄 ?쒖텧","?좑툘 ?먮낯 URL??媛쒖씤 ?좏겙 ?ы븿?붽났??二쇱쓽"],
    use:[["step","移댄뀒怨좊━/寃?됱쑝濡?紐⑹쟻蹂??꾧뎄 李얘린"]],
    url:"https://www.aixploria.com/en/", kind:"directory"},
+
+  {n:"Voicebox", cat:"apps", star:"", tag:"濡쒖뺄 AI ?뚯꽦 ?ㅽ뒠?붿삤 (TTS쨌蹂듭젣쨌諛쏆븘?곌린)",
+   what:"?대씪?곕뱶 ?놁씠 濡쒖뺄?먯꽌 ?꾨뒗 ?꾨씪?대쾭??以묒떖 ?뚯꽦 ?꾧뎄. TTS쨌?쒕줈???뚯꽦 蹂듭젣쨌?쒖뒪???꾩뿭 諛쏆븘?곌린瑜??섎굹濡?臾띠? ElevenLabs+Whisper ??? MCP濡??먯씠?꾪듃媛 蹂듭젣 ?뚯꽦?쇰줈 諛쒗솕?????덉쓬.",
+   feat:["7醫?TTS ?붿쭊쨌23媛??몄뼱 ?⑹꽦","?ㅻ뵒???섑뵆濡??쒕줈???뚯꽦 蹂듭젣","?쒖뒪???꾩뿭 ?⑥텞??諛쏆븘?곌린(mac ?먮룞 遺숈뿬?ｊ린)"],
+   use:[["step","macOS: voicebox.sh/download/mac-arm (Intel? mac-intel) ??Applications"],["step","Windows: voicebox.sh/download/windows (MSI)"],["cmd","docker compose up   # ?먮뒗 Docker"],["cmd","claude mcp add voicebox --transport http --url http://127.0.0.1:17493/mcp --header \"X-Voicebox-Client-Id: claude-code\""]],
+   url:"https://github.com/jamiepine/voicebox", kind:"desktop"},
+  {n:"Upscayl", cat:"apps", star:"狩??대?吏 SR", tag:"Real-ESRGAN AI ?대?吏 ?낆뒪耳?쇰윭",
+   what:"Real-ESRGAN 怨꾩뿴 AI濡???댁긽???대?吏瑜??붿쭏 ?먯떎 ?놁씠 ?뺣?쨌媛쒖꽑?섎뒗 ?щ줈?ㅽ뵆?ロ뤌 ?곗뒪?ы넲 ?? Vulkan GPU 媛?? ?쇨큵 泥섎━쨌而ㅼ뒪? 紐⑤뜽 吏?? (?꾩꽦 SR ?묒뾽 李멸퀬??",
+   feat:["Real-ESRGAN ?낆뒪耳?셋톅ulkan 媛??,"?ㅼ쨷 ?대?吏 ?쇨큵 泥섎━(Magic Batch)","?댁옣+而ㅼ뒪? 紐⑤뜽 쨌 Vulkan GPU ?꾩슂 쨌 AGPL-3.0"],
+   use:[["cmd","brew install --cask upscayl   # macOS"],["step","Windows: 由대━??.exe / Linux: AppImage쨌Flatpak쨌Snap쨌deb쨌rpm"],["cmd","git clone ??upscayl && npm install && npm run start   # ?뚯뒪"]],
+   url:"https://github.com/upscayl/upscayl", kind:"desktop"},
+  {n:"OGAM (Off Grid AI)", cat:"apps", star:"", tag:"紐⑤컮?셋텺ac???꾩쟾 ?ㅽ봽?쇱씤 AI ?ㅼ쐞??,
+   what:"?대씪?곕뱶 ?놁씠 濡쒖뺄 ?ㅽ뻾?섎뒗 醫낇빀 ?ㅽ봽?쇱씤 AI ?? ?띿뒪???앹꽦쨌?⑤뵒諛붿씠???대?吏 ?앹꽦쨌鍮꾩쟾쨌?뚯꽦쨌??肄쒕쭅??紐⑤몢 ?⑤뵒諛붿씠?ㅻ줈 泥섎━ ???곗씠?곌? 湲곌린瑜??좊굹吏 ?딆쓬.",
+   feat:["GGUF 紐⑤뜽(Qwen3쨌Llama3.2쨌Gemma3쨌Phi-4)","?⑤뵒諛붿씠??Stable Diffusion쨌鍮꾩쟾(SmolVLM)","Whisper STT쨌??肄쒕쭅(?밴??됀룰퀎?곌린) 쨌 MIT"],
+   use:[["step","iOS: App Store / Android: Play ?먮뒗 由대━??APK"],["cmd","git clone ??OGAM && npm install"],["cmd","npm run ios   # ?먮뒗 npm run android (Node 20+)"]],
+   url:"https://github.com/off-grid-ai/OGAM", kind:"app"},
+  {n:"ModLens", cat:"skills", star:"", tag:"?띿뒪???꾩슜 紐⑤뜽???대?吏 ?쎄린(鍮꾩쟾) 遺??,
+   what:"DeepSeek쨌GLM泥섎읆 ?대?吏瑜?紐??쎈뒗 ?띿뒪???꾩슜 紐⑤뜽???쒓컖 ?λ젰???뷀븯???먯씠?꾪듃 ?ㅽ궗. ?대?吏瑜?遺숈뿬?ｊ굅??寃쎈줈瑜?二쇰㈃ OCR쨌?덉씠?꾩썐쨌?뷀떚??愿怨꾨? 援ъ“??JSON?쇰줈 諛섑솚. 6醫?鍮꾩쟾 ?꾨줈諛붿씠???먮룞 ?섏씪?ㅻ쾭.",
+   feat:["?대?吏 ?ъ엯 ???ㅽ궗 ?먮룞 ?몃━嫄?,"OCR쨌?덉씠?꾩썐쨌?뷀떚??援ъ“??JSON","湲곗〈 CLI ?먭꺽利앸챸 ?ъ궗?㈑룸Т?ㅼ젙 쨌 MIT"],
+   use:[["cmd","npx -y @deepseek-ai/dsh plugin --profile web add @liustack/modlens@3.26.1"],["cmd","npx -y skills add liustack/modlens --skill modlens --global   # 洹????섎꽕??]],
+   url:"https://github.com/liustack/modlens", kind:"skill"},
+  {n:"GPT-Image2-Skill", cat:"skills", star:"", tag:"GPT Image 2 ?꾨＼?꾪듃 媛ㅻ윭由?+ ?ㅽ궗쨌CLI",
+   what:"OpenAI GPT Image 2???먮젅?댁뀡 ?꾨＼?꾪듃 媛ㅻ윭由ъ씠???먯씠?꾪듃 ?ㅽ궗 紐⑥쓬. ?앹꽦쨌?몄쭛 CLI? 李몄“ ?대?吏?믫봽濡ы봽????텛異??ㅽ궗???ы븿. 25+ 移댄뀒怨좊━ ?꾨＼?꾪듃 李몄“.",
+   feat:["25+ 移댄뀒怨좊━ ?꾨＼?꾪듃 媛ㅻ윭由?,"gpt-image(?앹꽦/?몄쭛)쨌get-prompt-from-image","text?뭝mage쨌?몄쭛쨌留덉뒪???명럹?명똿 CLI 쨌 MIT"],
+   use:[["cmd","/plugin marketplace add wuyoscar/gpt_image_2_skill"],["cmd","/plugin install gpt-image@wuyoscar-skills"],["cmd","uv tool install git+https://github.com/wuyoscar/gpt_image_2_skill ??gpt-image -p \"...\" (OPENAI_API_KEY)"]],
+   url:"https://github.com/wuyoscar/GPT-Image2-Skill", kind:"skill"},
+  {n:"DeepTutor", cat:"learn", star:"", tag:"?먯씠?꾪듃 ?ㅼ씠?곕툕 ?ㅽ뵂?뚯뒪 ?숈뒿 ?뚰겕?ㅽ럹?댁뒪",
+   what:"?쒗꽣留겶룸Ц?쒗??는룻댁쫰쨌由ъ꽌移샕룹떆媛곹솕쨌?숇떖 ?곗뒿???섎굹濡??듯빀???숈뒿 ?뚰겕?ㅽ럹?댁뒪(HKUDS). 紐⑤뱺 ?숈뒿 紐⑤뱶媛 ?몄뀡 臾몃㎘??怨듭쑀?섍퀬, ?ㅼ쨷 RAG ?붿쭊怨??몃? ?먯씠?꾪듃 ?먮Ц??遺숈씪 ???덉쓬.",
+   feat:["Chat쨌Quiz쨌Research쨌Solve쨌Mastery ?듯빀 ?고???,"LlamaIndex쨌GraphRAG쨌LightRAG쨌PageIndex","吏?앸쿋?댁뒪?믠섏궡?꾩엳??梨끸쇑텽bsidian ?곕룞 쨌 Apache 2.0"],
+   use:[["cmd","pip install -U deeptutor && deeptutor init && deeptutor start"],["cmd","docker run --rm -p 127.0.0.1:3782:3782 -v deeptutor-data:/app/data ghcr.io/hkuds/deeptutor:latest"],["step","Python 3.11+ 쨌 deeptutor chat (CLI ??뷀삎)"]],
+   url:"https://github.com/HKUDS/DeepTutor", kind:"workspace"},
+  {n:"Paseo", cat:"util", star:"", tag:"?щ윭 肄붾뵫 ?먯씠?꾪듃瑜????명꽣?섏씠?ㅻ줈 ?ㅼ??ㅽ듃?덉씠??,
+   what:"Claude Code쨌Codex쨌Copilot쨌OpenCode쨌Pi瑜??⑥씪 ?명꽣?섏씠?ㅼ뿉??蹂묐젹 ?ㅽ뻾?섎뒗 self-hosted ?ㅼ??ㅽ듃?덉씠???꾧뎄. ?곗뒪?ы넲쨌紐⑤컮?셋룹쎒쨌CLI ?대씪?댁뼵?? ?붾젅硫뷀듃由?룰컯???몄쬆 ?놁쓬.",
+   feat:["硫???꾨줈諛붿씠???듯빀쨌蹂묐젹 ?ㅽ뻾","iOS쨌Android쨌?곗뒪?ы넲쨌?뮤텰LI + ?뚯꽦 ?쒖뼱","臾댄뀛?덈찓?몃━쨌self-hosted 쨌 Apache-2.0"],
+   use:[["step","?곗뒪?ы넲: paseo.sh/download (?곕が ?먮룞 ?쒖옉)"],["cmd","npm install -g @getpaseo/cli && paseo"],["cmd","paseo run --provider claude/opus-4.6 \"...\" / paseo ls / paseo attach <id>"]],
+   url:"https://github.com/getpaseo/paseo", kind:"app/CLI"},
+  {n:"superset", cat:"util", star:"", tag:"蹂묐젹 肄붾뵫 ?먯씠?꾪듃瑜??꾪븳 ?먯씠?꾪떛 IDE",
+   what:"100+ 肄붾뵫 ?먯씠?꾪듃瑜?寃⑸━??git worktree(?낅┰ 釉뚮옖移샕룻꽣誘몃꼸쨌?섍꼍)?먯꽌 ?숈떆 ?ㅽ뻾?섎뒗 ?곗뒪?ы넲 IDE. ?댁옣 Diff 酉곗뼱쨌紐⑤땲?곕쭅쨌?듯빀 ?곕??먃룹빋 ???꾨━酉? Claude Code쨌Codex쨌Cursor 蹂묐젹 ?ㅼ??ㅽ듃?덉씠??",
+   feat:["寃⑸━ worktree 100+ ?먯씠?꾪듃 蹂묐젹","?댁옣 Diff 由щ럭쨌?곹깭/?꾨즺 ?뚮┝","CLI쨌SDK쨌MCP ?먭꺽 ?묎렐 쨌 ELv2(?곗뒪?ы넲 臾대즺)"],
+   use:[["step","macOS: 由대━??.dmg(arm64/x64) ???ㅽ뻾쨌濡쒓렇??],["cmd","curl -fsSL https://superset.sh/cli/install.sh | sh"],["cmd","brew install superset-sh/tap/superset   # ?먮뒗 Linux AppImage"]],
+   url:"https://github.com/superset-sh/superset", kind:"desktop"},
+  {n:"ratty", cat:"util", star:"", tag:"GPU ?뚮뜑留??곕????먮??덉씠???몃씪??3D)",
+   what:"Rust쨌Ratatui쨌Bevy 湲곕컲 GPU 媛???곕??먮줈, ?곕????덉뿉??3D 媛앹껜瑜?吏곸젒 ?뚮뜑留? TempleOS?먯꽌 ?곴컧. 2D/3D(?뺤궗?겶룹썝洹? 紐⑤뱶? ?명꽣?숉떚釉?移대찓??議곗옉.",
+   feat:["Ratty Graphics Protocol ?몃씪??3D","GPU ?띿뒪???뚮뜑쨌?대?吏 ?쒖떆","Bevy/wgpu GPU ?꾩슂 쨌 Linux 쨌 MIT"],
+   use:[["cmd","cargo install ratty"],["cmd","sudo pacman -S ratty   # Arch"],["cmd","nix run github:orhun/ratty   # ?ㅼ튂 ?놁씠 ?ㅽ뻾"]],
+   url:"https://github.com/orhun/ratty", kind:"tool"},
+  {n:"phone-harness", cat:"util", star:"", tag:"AI ?먯씠?꾪듃媛 ?ㅼ젣 ?곗쓣 議곗옉(誘몃윭留겶톋db)",
+   what:"Claude쨌Codex媛 ?덉삦쨌媛쒖“ ?놁씠 ?ㅼ젣 ?ㅻ쭏?명룿???щ엺泥섎읆 議곗옉. iPhone? Mac 誘몃윭留? Android??adb濡??몄뒪?몄뿉???쒖뼱(?곗뿏 ?꾨Т寃껊룄 ?ㅼ튂 ????. OCR濡??띿뒪?몃? ??醫뚰몴? ?④퍡 ?몄떇.",
+   feat:["iPhone(誘몃윭留?+Android(adb), ?덉삦 遺덊븘??,"Vision/?묎렐???몃━ OCR ?곹샇?묒슜","?듯빀 ?ы띁 API 쨌 ?대씪?곕뱶 ???듭뀡 쨌 MIT"],
+   use:[["step","~/.phone-harness???대줎 ??install.md ?덉감濡?PATH ?깅줉"],["cmd","phone-harness config set platform ios|android"],["step","?먮뒗 Claude/Codex???ㅼ튂 吏?쒕Ц??遺숈뿬?ｌ뼱 ?먮룞 ?ㅼ튂"]],
+   url:"https://github.com/ShawnPana/phone-harness", kind:"tool"},
+  {n:"flint-chart", cat:"util", star:"", tag:"AI ?먯씠?꾪듃??李⑦듃 ?쒓컖??以묎컙 ?몄뼱 (Microsoft)",
+   what:"媛꾨떒??怨좎닔以 李⑦듃 紐낆꽭瑜??щ윭 諛깆뿏?쒖슜 ?꾩꽦???쒓컖?붾줈 蹂?섑븯??以묎컙 ?몄뼱(MS Research). ?ㅼ??셋룹텞쨌?덉씠釉붿쓣 ?곗씠?걔룻뀒留덉뿉???먮룞 ?꾩텧. ?먯씠?꾪듃媛 李⑦듃瑜??앹꽦쨌寃利앺븯??MCP ?쒕쾭 ?쒓났.",
+   feat:["70+ ?쒕㎤????끒룹옄???덉씠?꾩썐","Vega-Lite쨌ECharts쨌Chart.js쨌Plotly쨌Excel 而댄뙆??,"Economist쨌Swiss ?뚮쭏쨌MCP ?곕룞 쨌 MIT"],
+   use:[["cmd","npm install flint-chart   # Node 18+"],["cmd","npx -y flint-chart-mcp   # MCP ?쒕쾭"],["step","assembleVegaLite({...})濡?Vega-Lite ?ㅽ럺 ?앹꽦"]],
+   url:"https://github.com/microsoft/flint-chart", kind:"library"},
+  {n:"KillerPDF", cat:"util", star:"", tag:"援щ룆 ?녿뒗 臾대즺 Windows PDF ?몄쭛湲?OCR)",
+   what:"Adobe쨌?대씪?곕뱶 ?놁씠 ?ㅽ봽?쇱씤?쇰줈 PDF 蹂닿린쨌?몄쭛쨌二쇱꽍쨌?묒떇쨌OCR??泥섎━?섎뒗 Windows ?꾩슜 ?몄쭛湲? PDFium ?뚮뜑留?+ Tesseract OCR(15+ ?몄뼱). 蹂묓빀쨌遺꾪븷쨌PDF 鍮꾧탳쨌CLI ?쇨큵 泥섎━.",
+   feat:["PDFium ?ㅼ쨷 酉걔톂esseract 寃?됯???PDF","二쇱꽍쨌?쒕챸쨌?묒떇쨌?섏씠吏 ?ъ젙??,"PDF 鍮꾧탳쨌deskew쨌CLI ?쇨큵 쨌 GPLv3"],
+   use:[["cmd","winget install killerpdf   # ?먮뒗 choco install killerpdf"],["step","吏곸젒: 由대━??KillerPDF.exe (?ы꽣釉붾룄 ?쒓났) 쨌 .NET 10 Desktop Runtime"],["cmd","KillerPDF.exe --ocr scan.pdf searchable.pdf --lang eng"]],
+   url:"https://github.com/SteveTheKiller/KillerPDF", kind:"app"},
+  {n:"PureMac", cat:"util", star:"", tag:"?ㅽ뵂?뚯뒪 macOS ?붿뒪???뺣━ ?좏떥由ы떚",
+   what:"CleanMyMac??臾대즺 ?ㅽ뵂?뚯뒪 ??? ???몄씤?ㅽ넧??룹옍?ы뙆???뺣━쨌罹먯떆/濡쒓렇/Xcode ?꾪떚?⑺듃 ?쒓굅쨌?먮룞 ?뺣━ ?ㅼ?以? 援щ룆쨌?붾젅硫뷀듃由?룰났??留덉????놁쓬.",
+   feat:["10?④퀎 留ㅼ묶 ???몄씤?ㅽ넧??텽rphan Finder","罹먯떆쨌濡쒓렇쨌媛쒕컻?꾧뎄 ?붿옱 ?뺣━","?쒕줈 ?붾젅硫뷀듃由?쨌 macOS 13+ 쨌 MIT"],
+   use:[["cmd","brew install --cask puremac"],["step","?먮뒗 由대━??.dmg ??/Applications (?꾩껜 ?붿뒪???묎렐 沅뚰븳 ?꾩슂)"],["cmd","brew install momenbasel/tap/puremac-cli ??puremac clean dev --dry-run"]],
+   url:"https://github.com/momenbasel/PureMac", kind:"app"},
+  {n:"watermarks-remover", cat:"util", star:"", tag:"AI ?앹꽦臾쇱쓽 ?뚰꽣留덊겕쨌?⑥? 硫뷀??곗씠???쒓굅",
+   what:"AI ?앹꽦 肄섑뀗痢좎쓽 ?뚰꽣留덊겕瑜??쒓굅?섎뒗 ?꾨씪?대쾭???꾧뎄. ?띿뒪?몄쓽 ?좊땲肄붾뱶 蹂댁씠吏 ?딅뒗 臾몄옄쨌硫뷀??곗씠?곕????듦퀎???좏겙 ?뚰꽣留덊겕쨌?쎌? ?뚰꽣留덊겕源뚯? ?ㅼ링?쇰줈 ?쒓굅. HTTP ?쒕퉬??+ ?먯씠?꾪듃 ?ㅽ궗 ?쒓났.",
+   feat:["Layer A 寃곗젙濡좎쟻(?좊땲肄붾뱶쨌?묐갑??留덊겕)","Layer B ?듦퀎???ъ옉??쨌 30+ ?뺤떇 C2PA/EXIF/XMP ?쒓굅","?쎌? ?뚰꽣留덊겕 ?ъ깮?굿톀EST API쨌Claude/Cursor ?ㅽ궗 쨌 MIT"],
+   use:[["cmd","python3 service/scripts/clean_text.py draft.md -o draft.cleaned.md"],["cmd","python3 install_skill.py --skill remove-ai-marks --target claude-code"],["cmd","make serve   # HTTP ?쒕퉬??:8765 쨌 Python 3.10+"]],
+   url:"https://github.com/guillaumemeyer/watermarks-remover", kind:"tool"},
 ];
 
 // ---- render ----
