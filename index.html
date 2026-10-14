@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 133개를 기능·사용법으로 정리한 참고 서고">
+<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 141개를 기능·사용법으로 정리한 참고 서고">
 <title>AI 툴킷 인덱스</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -234,13 +234,15 @@
 <body>
 
 
+
+
 <header class="top">
   <div class="top-inner">
     <p class="eyebrow">Reference Index</p>
     <h1>모아둔 AI 도구·자료 서고</h1>
     <p class="lede">그동안 수집한 깃허브·사이트·노션 링크를 전부 확인해 “무엇을 하는지 / 어떻게 쓰는지”로 정리하고 13개 카테고리로 분류했습니다. 검색창과 상단 필터로 원하는 도구를 바로 찾을 수 있어요.</p>
     <div class="meta-row">
-      <span><b>확인·정리 완료</b> 133개 (GitHub·웹·노션)</span>
+      <span><b>확인·정리 완료</b> 141개 (GitHub·웹·노션)</span>
       <span><b>⭐ 관심사 연관</b> 논문·발표·자동화·지식관리</span>
     </div>
   </div>
@@ -978,6 +980,47 @@ const T = [
    feat:["색·타이포·여백·컴포넌트 규칙 파일","getdesign.md(해외)·getdesign.kr(국내)","기존 코드 유지, 한 페이지씩 디자인만 수정"],
    use:[["step","getdesign에서 성격 비슷한 서비스 md 복사"],["step","프로젝트에 DESIGN.md 넣고 AI에게 읽혀 페이지별 수정"]],
    url:"https://shore-clutch-a8c.notion.site/Design-md-3d5b98f789b880b89119cd414b65f6ed", kind:"notion"},
+
+  {n:"REA (Reverse Engineer Anything)", cat:"util", star:"", tag:"에이전트용 리버스 엔지니어링 MCP·CLI",
+   what:"AI 에이전트가 소스 없이 소프트웨어를 리버스 엔지니어링하도록 돕는 로컬 MCP 서버 겸 CLI. 네이티브 바이너리·앱 동작·런타임을 분석해 증거와 함께 설명하고 유사 기능 재구현을 도움. (소유·분석 권한이 있는 SW의 합법 연구용)",
+   feat:["바이너리(Hopper/Ghidra/IDA)·JS/Electron·.NET·APK 분석","Go·Rust·WASM·EVM·펌웨어·패킷 캡처","로컬 수행·증거/한계 명시 · MIT(상용툴 별도)"],
+   use:[["cmd","npx rea-agents setup   # 에이전트 등록"],["cmd","npm install --global rea-agents && rea --help"],["step","Node 22.19+ · 네이티브 분석 시 Hopper/Ghidra/IDA 필요"]],
+   url:"https://github.com/morluto/rea", kind:"tool"},
+  {n:"anti-samcheonpo (삼천포)", cat:"util", star:"", tag:"AI 코딩 에이전트의 시간·비용 낭비 탐지 하니스",
+   what:"과잉검증·컨텍스트 드리프트·루프·거짓 완료 네 가지 낭비를 탐지·경고·차단하는 로컬 하니스(Go). 에이전트 자기보고가 아닌 실제 실행 결과·워크스페이스 상태로 판단, 모델 호출 없이 전부 로컬. (이름은 ‘삼천포로 빠진다’에서)",
+   feat:["동일 테스트 반복·범위 드리프트·거짓 완료 탐지","상태줄+토큰→원화 비용 리포트·세션 receipt","1~3회 에스컬레이션·사전 차단·롤백 · MIT"],
+   use:[["cmd","go install github.com/JinHo-von-Choi/anti-samcheonpo/cmd/samcheonpo@v0.8.0"],["step","또는 Releases 바이너리 → ~/.local/bin (samcheonpo + samcheonpo-hook)"],["cmd","samcheonpo install --agent claude   # /samcheonpo:summary 등"]],
+   url:"https://github.com/JinHo-von-Choi/anti-samcheonpo", kind:"tool"},
+  {n:"kordoc", cat:"write", star:"⭐ 학위논문 HWP", tag:"한국 공문서(HWP/HWPX)·PDF→Markdown·구조화",
+   what:"HWP·HWPX·PDF·오피스 문서를 Markdown·구조화 데이터로 변환하는 도구(라이브러리·CLI·MCP 서버). HWP 3.x/5.x·HWPX·PDF·DOCX·PPTX·이미지 지원, RAG 청크·OCR·서식 보존 패치·Markdown→HWPX 작성까지. (작성자: 지방공무원)",
+   feat:["읽기(Markdown·IR·RAG 청크)·로컬 OCR","Markdown→HWPX 작성(표·수식·차트)·양식 채우기·도장","개인정보 마스킹·폐쇄망(KORDOC_OFFLINE)·MCP 17종 · MIT"],
+   use:[["cmd","npm install kordoc   # 또는 npx kordoc"],["cmd","npx kordoc 문서.hwpx -o 문서.md   /  npx kordoc 스캔본.pdf --ocr"],["cmd","/plugin marketplace add chrisryugj/kordoc → /plugin install kordoc@kordoc"]],
+   url:"https://github.com/chrisryugj/kordoc", kind:"library"},
+  {n:"낭만빌더 가이드 (sdk-kim-builds)", cat:"read", star:"", tag:"한국어 실전 AI 활용 가이드 허브",
+   what:"‘일은 AI가, 낭만은 제가’를 표방하는 한국어 AI 실전 가이드 사이트(낭만빌더). 단순 질의가 아니라 회의록·보고서·콘텐츠 워크플로를 끝까지 처리하는 데 초점. 55개 가이드·30일 챌린지·뉴스레터.",
+   feat:["Claude Code·Codex·Ruflo 코딩 워크플로","노션 회의록·홈택스 등 업무 자동화","AI 도구 비교·투자 툴·스크래핑 툴 가이드"],
+   use:[["step","사이트에서 관심 가이드 열어 따라하기"],["step","대표: 앤트로픽 코딩 플레이북·Replica 스킬·클로드 SNS 스킬 17개"]],
+   url:"https://sdk-kim-builds.com/guides/", kind:"site"},
+  {n:"ui-skills (ibelick)", cat:"design", star:"", tag:"디자인 엔지니어용 AI 에이전트 UI 스킬 레지스트리",
+   what:"‘Skills for Design Engineers’ — AI 코딩 에이전트용 UI 스킬 레지스트리+CLI+MCP+웹 플레이북. 최고의 디자인 엔지니어링에서 UI 교훈을 정제해 에이전트가 더 나은 UI 작업을 하도록 도움.",
+   feat:["CLI로 스킬 탐색·가져오기","MCP 서버로 레지스트리 연결(list/get_skill)","웹 플레이북 ui-skills.com/playbook · MIT"],
+   use:[["cmd","npx ui-skills start   /  npx ui-skills list --category motion"],["cmd","npx ui-skills get baseline-ui"],["step","MCP 엔드포인트 https://www.ui-skills.com/mcp"]],
+   url:"https://github.com/ibelick/ui-skills", kind:"skill"},
+  {n:"replica-skill", cat:"skills", star:"", tag:"앱을 클론(재구현)하는 Claude 스킬 11종",
+   what:"어떤 앱이든 클린룸 방식으로 재구현하는 Claude 스킬 팩. 기능·UX를 연구→설계→구축→테스트→패리티 점검→리브랜딩→런칭까지 안내(소스·로고가 아닌 ‘하는 일’을 재현). 가입·API 키 불필요, 표준 라이브러리 Python 도구 6종.",
+   feat:["recon·architect·design·build·backend·test·diff","entrepreneur(리뷰 분석)·brand·launch·deploy","replica/ 폴더에 산출물 누적·스킬끼리 참조 · MIT"],
+   use:[["cmd","/plugin marketplace add Jakeschincariol/replica-skill → /plugin install replica-skill@replica-skill"],["cmd","git clone … && cp -r replica-skill/replica-* ~/.claude/skills/"],["step","recon→architect→…→deploy 순 · Python 3.8+"]],
+   url:"https://github.com/Jakeschincariol/replica-skill", kind:"skill"},
+  {n:"Spec Kit", cat:"skills", star:"", tag:"사양 주도 개발(SDD) 툴킷 (GitHub 공식)",
+   what:"AI 코딩 에이전트에 구조화 프로세스·재사용 템플릿·문서화 산출물을 제공하는 오픈소스 툴킷(GitHub 공식). Python CLI(specify-cli)+스킬. 기능 구축(SDD)·버그 수정·아이디어 평가 세 진입점.",
+   feat:["SDD: constitution→specify→plan→tasks→implement→converge","버그 수정·아이디어 평가 번들 확장","extensions·presets·다양한 에이전트 지원 · MIT"],
+   use:[["cmd","uv tool install specify-cli"],["cmd","specify init my-project --integration copilot"],["step","챗에서 /speckit-constitution → /speckit-specify → … (Python 3.11+·uv)"]],
+   url:"https://github.com/github/spec-kit", kind:"tool"},
+  {n:"schift-ocr-1-beta", cat:"3dv", star:"", tag:"한국어 문서 OCR 오픈웨이트 모델 (베타)",
+   what:"한국어 문서 OCR 오픈웨이트 베타 모델(schift-io, baidu/Unlimited-OCR 파인튜닝). 페이지 이미지를 읽기 순서대로 텍스트화, 표는 HTML로, 블록별 레이아웃 박스. SAM ViT-B+CLIP ViT-L 인코더 + DeepSeek-V2식 MoE 디코더 ~3.6B.",
+   feat:["읽기 순서 출력·HTML 표·레이아웃 박스","표 라우팅 특화 MoE expert","인쇄 양식 CER 0.067 · GPU 필요 · MIT"],
+   use:[["cmd","vllm serve schift-io/schift-ocr-1-beta --trust-remote-code --max-model-len 32768"],["cmd","pip install -U transformers accelerate   # model.infer(..., prompt=\"<image>document parsing.\")"],["step","GPU 필요 · SGLang·Docker Model Runner도 지원"]],
+   url:"https://huggingface.co/schift-io/schift-ocr-1-beta", kind:"model"},
 ];
 
 // ---- render ----
