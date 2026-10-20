@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 144개를 기능·사용법으로 정리한 참고 서고">
+<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 144개를 기능·사용법으로 정리한 참고 서고 (비개발자 시작 가이드 포함)">
 <title>AI 툴킷 인덱스</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,6 +217,30 @@
   .card-foot a:hover { text-decoration: underline; }
   .card-foot a:focus-visible, .pill:focus-visible, .search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .kind { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--ink-3); border: 1px solid var(--line-2); border-radius: 5px; padding: 2px 7px; white-space: nowrap; flex: none; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin:-2px 0 0; }
+  .typechip { font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--ink-2); background:var(--surface-2); border-radius:5px; padding:2px 8px; white-space:nowrap; }
+  .diff { font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:500; border-radius:5px; padding:2px 8px; white-space:nowrap; }
+  .d-easy { color:var(--c-dev); background:var(--c-dev-bg); }
+  .d-mid  { color:var(--c-research); background:var(--c-research-bg); }
+  .d-hard { color:var(--c-apps); background:var(--c-apps-bg); }
+  .use-label .where { font-weight:400; text-transform:none; letter-spacing:0; color:var(--ink-2); margin-left:6px; }
+  .difpills { margin-top:-4px; }
+  .difpills .pill { font-size:11.5px; }
+  details.guide { border:1px solid var(--line); border-radius:12px; background:var(--surface); margin-bottom:26px; overflow:hidden; }
+  details.guide > summary { cursor:pointer; list-style:none; padding:14px 18px; font-size:13.5px; color:var(--ink-2); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  details.guide > summary::-webkit-details-marker { display:none; }
+  details.guide > summary::after { content:"▾"; margin-left:auto; color:var(--ink-3); transition:transform .2s; }
+  details.guide[open] > summary::after { transform:rotate(180deg); }
+  .g-badge { font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600; color:var(--accent); background:var(--accent-soft); border-radius:20px; padding:4px 11px; letter-spacing:.02em; }
+  .g-body { padding:0 18px 18px; }
+  .g-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  .g-card { background:var(--surface-2); border-radius:10px; padding:14px 16px; }
+  .g-card h4 { margin:0 0 8px; font-size:13.5px; font-weight:600; color:var(--ink); }
+  .g-card ul { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .g-card li { font-size:12.8px; color:var(--ink-2); line-height:1.55; }
+  .g-card code { font-family:"IBM Plex Mono",monospace; font-size:11.5px; background:var(--code-bg); color:var(--code-ink); padding:1px 5px; border-radius:4px; }
+  .g-card a { color:var(--accent); text-decoration:none; }
+  .g-card a:hover { text-decoration:underline; }
 
   .locked-note { background: var(--c-lock-bg); border: 1px solid var(--line); border-left: 3px solid var(--lock); border-radius: 10px; padding: 14px 16px; font-size: 13px; color: var(--ink-2); }
   .locked-note b { color: var(--lock); }
@@ -257,10 +281,50 @@
       <input id="q" type="search" placeholder="도구 이름·기능으로 검색 (예: 논문, hwp, 메모리, 프롬프트)" autocomplete="off">
     </label>
     <div class="pills" id="pills"></div>
+    <div class="pills difpills" id="difpills"></div>
   </div>
 </div>
 
 <div class="wrap">
+  <details class="guide" open>
+    <summary><span class="g-badge">🔰 비개발자 시작 가이드</span> 처음이면 여기부터 — 준비물·용어·설치 요령 (제목을 누르면 접혀요)</summary>
+    <div class="g-body">
+      <div class="g-grid">
+        <div class="g-card">
+          <h4>① 딱 3가지만 준비</h4>
+          <ul>
+            <li><b>Claude 데스크톱 앱</b> — <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> 에서 받아 설치·로그인. ‘플러그인·스킬·MCP’ 카드가 여기서 동작해요.</li>
+            <li><b>Node.js</b> — <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> 의 초록 <b>LTS</b> 버튼 → ‘다음’만 눌러 설치. <code>npx·npm</code> 명령에 필요.</li>
+            <li><b>Python</b> — <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a> 에서 받아 설치(설치 화면의 <b>Add to PATH</b> 체크). <code>pip</code> 명령에 필요.</li>
+          </ul>
+        </div>
+        <div class="g-card">
+          <h4>② 카드 읽는 법</h4>
+          <ul>
+            <li>카드의 <span class="typechip">유형</span> 과 <span class="diff d-easy">쉬움</span> <span class="diff d-mid">보통</span> <span class="diff d-hard">고급</span> 뱃지로 난이도를 먼저 보세요.</li>
+            <li>‘설치·사용법’ 옆 안내로 <b>어디에 입력</b>하는지 압니다 — 💬 클로드 채팅창 · 💻 터미널 · 🌐 브라우저 · ⬇️ 앱 다운로드.</li>
+            <li>검은 상자의 명령은 <b>그대로 복사해 붙여넣기</b> 하면 됩니다.</li>
+          </ul>
+        </div>
+        <div class="g-card">
+          <h4>③ 유형별 한 줄 설치</h4>
+          <ul>
+            <li><b>💬 플러그인</b> — 클로드 채팅창에 <code>/plugin marketplace add …</code> → <code>/plugin install …</code> 를 차례로 입력.</li>
+            <li><b>💻 명령어</b> — Windows는 <b>PowerShell</b>, Mac은 <b>터미널</b>을 열고 명령을 붙여넣어 Enter.</li>
+            <li><b>⬇️ 앱</b> — 카드 링크(GitHub Releases)에서 내 OS용 설치 파일을 받습니다.</li>
+            <li><b>🌐 웹</b> — 링크를 눌러 바로 사용합니다.</li>
+          </ul>
+        </div>
+        <div class="g-card">
+          <h4>④ 막히면 + 용어 30초</h4>
+          <ul>
+            <li>카드 내용을 통째로 복사해 <b>클로드에게 “이거 설치하는 것 도와줘”</b> 라고 붙여넣으면 내 환경에 맞춰 단계별로 안내해 줍니다.</li>
+            <li>플러그인·스킬 = 클로드에 기능 추가 · MCP = 클로드를 외부 도구에 연결 · CLI/터미널 = 명령어 넣는 검은 창 · npx·npm = Node 명령 · pip = Python 명령.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </details>
   <main id="cats"></main>
   <div class="empty" id="empty">검색 결과가 없습니다.</div>
 
@@ -1051,18 +1115,38 @@ function cmdHTML(use){
     return `<span class="step">${esc}</span>`;
   }).join('\n');
 }
+const TYPE_KO = {plugin:"플러그인",skill:"스킬",library:"라이브러리",tool:"CLI 도구",framework:"프레임워크",infra:"인프라",desktop:"데스크톱 앱",app:"앱","app/CLI":"앱·CLI",webapp:"웹 앱",webservice:"웹 서비스",reference:"웹 레퍼런스",site:"웹사이트",article:"가이드 글",notion:"노션 가이드",model:"AI 모델",research:"연구 코드",example:"예제 코드",pipeline:"파이프라인",benchmark:"벤치마크",course:"온라인 강좌",video:"영상 채널",gallery:"체험 모음","no-code":"노코드 도구",directory:"도구 디렉터리",archive:"아카이브",workspace:"워크스페이스","종료":"서비스 종료"};
+const WEB_KINDS = ["webapp","webservice","reference","site","article","notion","gallery","no-code","course","video","directory","archive"];
+function classify(t){
+  const u = t.use.map(x=>x[1]).join('  ').toLowerCase();
+  const k = t.kind;
+  let where, icon;
+  if(/\/plugin|marketplace add|plugin install/.test(u)){ where="클로드 채팅창에 입력"; icon="💬"; }
+  else if(/(npx|npm |pip |pipx|uv |cargo |conda |docker|brew |winget|choco|go install|curl |git clone|bash |\.sh|vllm|sgl-omni)/.test(u)){ where="터미널(명령 프롬프트)에 입력"; icon="💻"; }
+  else if(k==='desktop'||k==='app'||k==='app/CLI'){ where="앱 내려받아 실행"; icon="⬇️"; }
+  else if(WEB_KINDS.includes(k)){ where="브라우저에서 접속"; icon="🌐"; }
+  else { where="아래 안내 참고"; icon="📄"; }
+  let diff;
+  if(/conda|docker|cuda|gpu|vllm|sgl-omni|\.safetensors|download_weights/.test(u) || ['model','research','pipeline','benchmark'].includes(k)) diff="고급";
+  else if(/\/plugin|marketplace/.test(u) || WEB_KINDS.includes(k)) diff="쉬움";
+  else diff="보통";
+  return {where, icon, type:(TYPE_KO[k]||k), diff};
+}
 function cardHTML(t){
+  const c = classify(t);
   const feats = t.feat.map(f=>`<li>${f}</li>`).join('');
   const star = t.star ? `<span class="star">${t.star}</span>` : '';
   const short = t.url.replace(/^https?:\/\//,'').replace(/\/$/,'');
   const shortDisp = short.length>42 ? short.slice(0,40)+'…' : short;
-  return `<article class="card" data-cat="${t.cat}" data-txt="${(t.n+' '+t.tag+' '+t.what+' '+t.feat.join(' ')+' '+t.cat).toLowerCase().replace(/"/g,'')}" style="--cc:${catColor(t.cat)}">
+  const dcls = c.diff==='쉬움'?'d-easy':(c.diff==='고급'?'d-hard':'d-mid');
+  return `<article class="card" data-cat="${t.cat}" data-diff="${c.diff}" data-txt="${(t.n+' '+t.tag+' '+t.what+' '+t.feat.join(' ')+' '+t.cat+' '+c.type+' '+c.diff).toLowerCase().replace(/"/g,'')}" style="--cc:${catColor(t.cat)}">
     <div class="card-top"><div><h3>${t.n}</h3><p class="tagline">${t.tag}</p></div>${star}</div>
+    <div class="badges"><span class="typechip">${c.type}</span><span class="diff ${dcls}">${c.diff}</span></div>
     <p class="what">${t.what}</p>
     <ul class="feat">${feats}</ul>
-    <p class="use-label">사용법</p>
+    <p class="use-label">설치·사용법 <span class="where">${c.icon} ${c.where}</span></p>
     <pre class="use">${cmdHTML(t.use)}</pre>
-    <div class="card-foot"><a href="${t.url}" target="_blank" rel="noopener">${shortDisp} ↗</a><span class="kind">${t.kind}</span></div>
+    <div class="card-foot"><a href="${t.url}" target="_blank" rel="noopener">${shortDisp} ↗</a></div>
   </article>`;
 }
 const counts = {};
@@ -1093,6 +1177,17 @@ function mkPill(id,label,n){
 pills.appendChild(mkPill('all','전체',T.length));
 catList.forEach(([id,name])=> pills.appendChild(mkPill(id, name.split(' · ')[0], counts[id])));
 
+// difficulty filter
+let activeDiff='all';
+const difpills=document.getElementById('difpills');
+function mkDif(id,label){
+  const b=document.createElement('button'); b.className='pill dif'; b.dataset.id=id; b.type='button';
+  b.setAttribute('aria-pressed', id==='all'); b.textContent=label;
+  b.onclick=()=>{ activeDiff=id; difpills.querySelectorAll('.pill').forEach(p=>p.setAttribute('aria-pressed', p.dataset.id===id)); apply(); };
+  return b;
+}
+[['all','🔰 난이도 전체'],['쉬움','쉬움'],['보통','보통'],['고급','고급']].forEach(([i,l])=>difpills.appendChild(mkDif(i,l)));
+
 // search + filter
 const q = document.getElementById('q');
 const empty = document.getElementById('empty');
@@ -1105,7 +1200,7 @@ function apply(){
     const catOK = (active==='all' || active===id);
     let anyInSec=false;
     sec.querySelectorAll('.card').forEach(card=>{
-      const match = catOK && (!term || card.dataset.txt.includes(term));
+      const match = catOK && (activeDiff==='all' || card.dataset.diff===activeDiff) && (!term || card.dataset.txt.includes(term));
       card.style.display = match?'':'none';
       if(match){ anyInSec=true; anyGlobal=true; }
     });
