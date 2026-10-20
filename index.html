@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 141개를 기능·사용법으로 정리한 참고 서고">
+<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 144개를 기능·사용법으로 정리한 참고 서고">
 <title>AI 툴킷 인덱스</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -236,13 +236,15 @@
 
 
 
+
+
 <header class="top">
   <div class="top-inner">
     <p class="eyebrow">Reference Index</p>
     <h1>모아둔 AI 도구·자료 서고</h1>
     <p class="lede">그동안 수집한 깃허브·사이트·노션 링크를 전부 확인해 “무엇을 하는지 / 어떻게 쓰는지”로 정리하고 13개 카테고리로 분류했습니다. 검색창과 상단 필터로 원하는 도구를 바로 찾을 수 있어요.</p>
     <div class="meta-row">
-      <span><b>확인·정리 완료</b> 141개 (GitHub·웹·노션)</span>
+      <span><b>확인·정리 완료</b> 144개 (GitHub·웹·노션)</span>
       <span><b>⭐ 관심사 연관</b> 논문·발표·자동화·지식관리</span>
     </div>
   </div>
@@ -1021,6 +1023,22 @@ const T = [
    feat:["읽기 순서 출력·HTML 표·레이아웃 박스","표 라우팅 특화 MoE expert","인쇄 양식 CER 0.067 · GPU 필요 · MIT"],
    use:[["cmd","vllm serve schift-io/schift-ocr-1-beta --trust-remote-code --max-model-len 32768"],["cmd","pip install -U transformers accelerate   # model.infer(..., prompt=\"<image>document parsing.\")"],["step","GPU 필요 · SGLang·Docker Model Runner도 지원"]],
    url:"https://huggingface.co/schift-io/schift-ocr-1-beta", kind:"model"},
+
+  {n:"GenIA", cat:"3dv", star:"⭐ 3D 재구성", tag:"입력 정렬 테스트타임 생성형 3D 재구성 (Meta FAIR)",
+   what:"단일 이미지·멀티뷰·단안 비디오에서 입력에 정렬된 완전한 3D 객체를 복원하는 연구용 추론 파이프라인(‘Generative Reconstruction with Test-Time Input Alignment’). SAM 3D Objects의 생성형 prior를 동결한 채 재학습 없이 추론 시점의 기하·광학 제약으로 관측에 정렬.",
+   feat:["단일/멀티뷰/동적(비디오) 3모드","재학습 없는 테스트타임 정렬","Gaussians+mesh·프레임별 pose/deformation"],
+   use:[["cmd","git clone …/GenIA && cd GenIA && bash install.sh && conda activate genia"],["cmd","python -m genia.core.download_weights   # HF서 SAM 3D 라이선스 수락"],["cmd","python demo/run_demo.py image|multiview|dynamic   (CUDA 12.8 GPU · CC BY-NC)"]],
+   url:"https://github.com/facebookresearch/GenIA", kind:"research"},
+  {n:"Filee", cat:"util", star:"⭐ HWP 변환", tag:"드래그로 쓰는 무료 데스크톱 파일 변환기(255종)",
+   what:"키를 누른 채 파일을 끌면 커서 위치에 도넛 메뉴가 열리고 원하는 포맷에 떨어뜨려 변환하는 무료 오픈소스 데스크톱 앱. 오프라인 동작, 이미지·PDF·Office·HWP/HWPX·전자책·비디오·오디오·CAD·3D 등 255종. (C#/.NET 10 · Avalonia)",
+   feat:["커서 도넛 메뉴·브라우저 드래그·폴더 감시","다단계 경로(HWP→HWPX→DOCX)·병렬 배치","선택 엔진(LibreOffice·Pandoc·FFmpeg 등) · MIT"],
+   use:[["step","Releases에서 Win Setup.exe / mac·Linux install.sh (프리뷰)"],["cmd","filee convert photo.heic --to jpg   /  filee watch D:\\Inbox --to pdf"],["step","Ctrl(mac Option) 누른 채 드래그 → 포맷에 드롭"]],
+   url:"https://github.com/KnifeLemon/Filee", kind:"desktop"},
+  {n:"PentAGI", cat:"util", star:"", tag:"자율 AI 에이전트 침투 테스트 (보안 연구·권한 내 사용)",
+   what:"목표를 자연어로 주면 AI 에이전트가 격리된 Docker 샌드박스에서 nmap·Metasploit·sqlmap 등 20여 종 보안 도구를 실행·계획·리포트하는 셀프호스팅 멀티에이전트 침투 테스트 시스템(VXControl). ⚠️ README 명시: 본인 소유이거나 명시적 평가 권한이 있는 시스템에만 사용(authorized testing only).",
+   feat:["격리 Docker 샌드박스·자율/대화형 Flow","pgvector 장기 메모리·지식 그래프·웹검색","LLM 10종+·REST/GraphQL·PDF 리포트 · MIT(+EULA)"],
+   use:[["step","Docker+Compose 필요 · 공식 installer(pentagi.com) 또는 수동"],["cmd","curl -O …/docker-compose.yml && docker compose up -d"],["step","https://localhost:8443 → admin@pentagi.com/admin(즉시 변경) → Flows"]],
+   url:"https://github.com/vxcontrol/pentagi", kind:"tool"},
 ];
 
 // ---- render ----
