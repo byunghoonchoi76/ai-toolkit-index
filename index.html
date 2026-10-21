@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 144개를 기능·사용법으로 정리한 참고 서고 (비개발자 시작 가이드 포함)">
+<meta name="description" content="AI 툴킷 인덱스 — 수집한 깃허브·사이트·노션 링크 145개를 기능·사용법으로 정리한 참고 서고 (비개발자 시작 가이드 포함)">
 <title>AI 툴킷 인덱스</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -262,13 +262,15 @@
 
 
 
+
+
 <header class="top">
   <div class="top-inner">
     <p class="eyebrow">Reference Index</p>
     <h1>모아둔 AI 도구·자료 서고</h1>
     <p class="lede">그동안 수집한 깃허브·사이트·노션 링크를 전부 확인해 “무엇을 하는지 / 어떻게 쓰는지”로 정리하고 13개 카테고리로 분류했습니다. 검색창과 상단 필터로 원하는 도구를 바로 찾을 수 있어요.</p>
     <div class="meta-row">
-      <span><b>확인·정리 완료</b> 144개 (GitHub·웹·노션)</span>
+      <span><b>확인·정리 완료</b> 145개 (GitHub·웹·노션)</span>
       <span><b>⭐ 관심사 연관</b> 논문·발표·자동화·지식관리</span>
     </div>
   </div>
@@ -1103,6 +1105,12 @@ const T = [
    feat:["격리 Docker 샌드박스·자율/대화형 Flow","pgvector 장기 메모리·지식 그래프·웹검색","LLM 10종+·REST/GraphQL·PDF 리포트 · MIT(+EULA)"],
    use:[["step","Docker+Compose 필요 · 공식 installer(pentagi.com) 또는 수동"],["cmd","curl -O …/docker-compose.yml && docker compose up -d"],["step","https://localhost:8443 → admin@pentagi.com/admin(즉시 변경) → Flows"]],
    url:"https://github.com/vxcontrol/pentagi", kind:"tool"},
+
+  {n:"SolidCraft", cat:"apps", star:"", tag:"Rust 파라메트릭 3D CAD (앱·CLI·MCP)",
+   what:"스케치·제약조건으로 형상을 만들고 치수를 바꾸면 피처 타임라인을 따라 다시 빌드되는 오픈소스 파라메트릭 3D CAD. 데스크톱·브라우저·헤드리스 CLI·MCP 서버를 함께 제공해 AI 에이전트가 모델링 도구를 직접 호출할 수도 있음. (초기 단계지만 간단한 부품에는 사용 가능)",
+   feat:["스케치+제약 솔버·파라미터 구동 치수","돌출·회전·스윕·로프트·필렛·셸·패턴 타임라인","어셈블리·조인트·간섭검사·질량특성","STEP·IGES·3MF·STL·OBJ·glTF·URDF 입출력","solidcraft-cli mcp 로 Claude 에이전트 연동 · MIT/Apache-2.0"],
+   use:[["cmd","winget install bherbruck.SolidCraft   # Windows / mac·Linux는 Releases의 dmg·AppImage"],["step","웹: solidcraft.io/app (설치 없이 바로 사용)"],["cmd","claude mcp add solidcraft -- solidcraft-cli mcp   # AI 모델링 연동(--connect로 실행 중 앱 조작)"]],
+   url:"https://github.com/tangency-labs/solidcraft", kind:"desktop"},
 ];
 
 // ---- render ----
